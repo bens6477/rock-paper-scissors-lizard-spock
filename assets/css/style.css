@@ -9,6 +9,11 @@
     text-align: center;
 }
 
+/* style .clear class to clear floats */
+.clear {
+    clear: both;
+}
+
 /* stlye title area */
 .title-area {
     height: 6rem;
@@ -19,10 +24,20 @@
     padding-top: 1rem;
 }
 
-/* style and position game areas */
+/* style and position game area sections */
+.games-area {
+    position: relative;
+}
+
 .player-area, .central-area {
-    display: inline;
+    display: inline-block;
+}
+
+#user-area {
     float: left;
+}
+#cpu-area {
+    float: right;
 }
 
 .player-area {
@@ -32,4 +47,14 @@
 
 .central-area {
     width: 20%;
+}
+
+.score-area {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    padding: 7rem;
+
 }
