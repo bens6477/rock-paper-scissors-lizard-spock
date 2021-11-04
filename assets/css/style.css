@@ -1,0 +1,27 @@
+
+
+/* add base stylling */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* style page title */
+.title-area h1 {
+    text-align: center;
+}
+
+/* edit style positioning game areas */
+.player-area, .central-area {
+    display: inline;
+    float: left;
+}
+
+.player-area {
+    width: 40%;
+}
+
+.central-area {
+    width: 20%;
+}
