@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(userSelection) {
 
-    let userImage = document.getElementById('user-selection');
-    let cpuImage = document.getElementById('cpu-selection');
+    let userImage = document.getElementById('user-image');
+    let cpuImage = document.getElementById('cpu-image');
 
     // Change image in user area
     changeImage(userImage, userSelection);

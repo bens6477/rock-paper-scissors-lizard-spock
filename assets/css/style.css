@@ -65,7 +65,7 @@
 
 
 /* style player areas */
-.selection-container img {
+.image-container img {
     width: 100%;
     transform: translate(0%, 0.1rem);
     padding: 1rem;
