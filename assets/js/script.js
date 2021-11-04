@@ -13,7 +13,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Change image to new user selection
 function checkAnswer(userSelection) {
-    userImage.src = "assets/images/rock.png";
+    if (userSelection === "rock") {
+        userImage.src = "assets/images/rock.png";
+    } else if (userSelection === "paper") {
+        userImage.src = "assets/images/paper.png";
+    } else if (userSelection === "scissors") {
+        userImage.src = "assets/images/scissors.png";
+    } else if (userSelection === "lizard") {
+        userImage.src = "assets/images/lizard.png";
+    } else if (userSelection === "spock") {
+        userImage.src = "assets/images/spock.png";
+    }
     console.log(userSelection);
     return userSelection
 };
