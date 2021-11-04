@@ -56,20 +56,32 @@ function changeImage(playerImage, selection) {
 function checkAnswer(userSelection, cpuSelection) {
 
     // array = [win, win, lose, lose, draw]
-    let rock = ['scissors', 'lizard', 'paper', 'spock', 'rock'];
+    let rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock'];
+    let paperArray = ['rock', 'spock', 'scissors', 'lizard', 'paper'];
+    let scissorsArray = ['paper', 'lizard', 'rock', 'spock', 'scissors'];
+    let lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
+    let spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
+
+    let cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray];
+
+    console.log(cases);
+    console.log(cases[0]);
 
 
     // Determine the winner
     if (userSelection === 'rock') {
-        if (cpuSelection === rock[0] || cpuSelection === rock[1]) {
+        if (cpuSelection === cases[0][0] || cpuSelection === cases[0][1]) {
             console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
             alert(`You win! ${userSelection} beats ${cpuSelection}.`);
-        } else if (cpuSelection === rock[2] || cpuSelection === rock[3]) {
+        } else if (cpuSelection === cases[0][2] || cpuSelection === cases[0][3]) {
             console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
             alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
-        } else {
+        } else if (cpuSelection === cases[0][4]) {
             console.log("It's a draw!");
             alert("It's a draw!");
+        } else {
+            console.log("Error! Unknown inputs.");
+            alert("Error! Unknown inputs.");
         }
     }
 }
