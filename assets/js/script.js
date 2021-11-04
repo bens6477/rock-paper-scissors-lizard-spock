@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         let userSelection = button.getAttribute("data-type");
-        button.addEventListener('click', () => checkAnswer(userSelection));
+        button.addEventListener('click', () => runGame(userSelection));
     }
 })
 
 
 // Change image to new user selection
-function checkAnswer(userSelection) {
+function runGame(userSelection) {
     if (userSelection === "rock") {
         userImage.src = "assets/images/rock.png";
     } else if (userSelection === "paper") {
