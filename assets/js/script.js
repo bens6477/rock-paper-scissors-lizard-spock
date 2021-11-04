@@ -54,8 +54,23 @@ function changeImage(playerImage, selection) {
  * Takes the user and cpu selections and outputs result
  */
 function checkAnswer(userSelection, cpuSelection) {
-    if (userSelection === cpuSelection) {
-        alert("It's a draw");
+
+    // array = [win, win, lose, lose, draw]
+    let rock = ['scissors', 'lizard', 'paper', 'spock', 'rock'];
+
+
+    // Determine the winner
+    if (userSelection === 'rock') {
+        if (cpuSelection === rock[0] || cpuSelection === rock[1]) {
+            console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
+            alert(`You win! ${userSelection} beats ${cpuSelection}.`);
+        } else if (cpuSelection === rock[2] || cpuSelection === rock[3]) {
+            console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
+            alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
+        } else {
+            console.log("It's a draw!");
+            alert("It's a draw!");
+        }
     }
 }
 
