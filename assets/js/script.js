@@ -11,37 +11,43 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 
-// Change image to new user selection
+/**
+ * Main game loop
+ */
 function runGame(userSelection) {
 
-    selection = userSelection;
-    changeImage(userSelection)
-    console.log(userSelection);
+    let userImage = document.getElementById('user-selection');
+    let cpuImage = document.getElementById('cpu-selection');
 
-    // Assign random cpu selection
+    // Change image in user area
+    changeImage(userImage, userSelection);
+
+    // Assign random cpu selection and change image
     let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let cpuIndex = Math.floor(Math.random() * 5);
     let cpuSelection = options[cpuIndex]
+    changeImage(cpuImage, cpuSelection);
 
     return [userSelection, cpuSelection]
 };
 
-function changeImage(selection) {
+/**
+ * Changes the player's image depending on selection
+ */
+function changeImage(playerImage, selection) {
     if (selection === "rock") {
-        userImage.src = "assets/images/rock.png";
+        playerImage.src = "assets/images/rock.png";
     } else if (selection === "paper") {
-        userImage.src = "assets/images/paper.png";
+        playerImage.src = "assets/images/paper.png";
     } else if (selection === "scissors") {
-        userImage.src = "assets/images/scissors.png";
+        playerImage.src = "assets/images/scissors.png";
     } else if (selection === "lizard") {
-        userImage.src = "assets/images/lizard.png";
+        playerImage.src = "assets/images/lizard.png";
     } else if (selection === "spock") {
-        userImage.src = "assets/images/spock.png";
+        playerImage.src = "assets/images/spock.png";
     }
 }
 
-// Listen for click on user selection
-let userImage = document.getElementById('user-selection');
 
 
 
