@@ -51,7 +51,7 @@ function changeImage(playerImage, selection) {
 
 
 /**
- * Takes the user and cpu selections and outputs result
+ * Takes the selections of the user and cpu and determines the outcome
  */
 function checkAnswer(userSelection, cpuSelection) {
 
@@ -70,26 +70,51 @@ function checkAnswer(userSelection, cpuSelection) {
     let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     for (let i = 0; i < options.length; i++) {
         if (userSelection !== options[i]) {
-            console.log(`${userSelection} !== ${options[i]}`);
             continue;
         } else {
-            console.log(`${userSelection} === ${options[i]}`);
 
             // Outcome Logic - Determine the case (win, lose, draw)
+            let winner;
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
                 alert(`You win! ${userSelection} beats ${cpuSelection}.`);
+
+                winner = 'user';
+                incrementScore(winner);
+
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
                 console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
                 alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
+
+                winner = 'cpu';
+                incrementScore(winner);
+
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
                 alert("It's a draw!");
+
+                winner = 'nobody';
+                incrementScore(winner);
+
             } else {
                 console.log("Error! Unknown inputs.");
                 alert("Error! Unknown inputs.");
             }
         }
+    }
+}
+
+
+function incrementScore(winner) {
+    if (winner === 'user') {
+        console.log(`${winner} wins.`);
+    } else if (winner === 'cpu') {
+        console.log(`${winner} wins.`);
+    } else if (winner === 'nobody') {
+        console.log(`${winner} wins.`);
+    } else {
+        console.log("Error! No winner was determined.");
+        alert("Error! No winner was determined.");
     }
 }
 
