@@ -1,9 +1,12 @@
+/* import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 /* add base stylling */
 * {
     margin: 0;
     padding: 0;
     border: none;
     box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
     text-align: center;
 }
 
