@@ -5,14 +5,11 @@
     margin: 0;
     padding: 0;
     border: none;
-}
-
-/* style page title */
-.title-area h1 {
+    box-sizing: border-box;
     text-align: center;
 }
 
-/* edit style positioning game areas */
+/* style and position game areas */
 .player-area, .central-area {
     display: inline;
     float: left;
@@ -20,6 +17,7 @@
 
 .player-area {
     width: 40%;
+    border: 2px solid black;
 }
 
 .central-area {
