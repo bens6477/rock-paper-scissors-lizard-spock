@@ -68,6 +68,14 @@
     padding: 1rem;
 }
 
+/* style user selection buttons */
+.btn {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #1b1d4e;
+}
 
 /* style score area */
 .score-area {

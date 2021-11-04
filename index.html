@@ -11,11 +11,15 @@
 </head>
 <body>
 
+    <!-- create title area -->
     <div class="title-area">
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
     </div>
 
+    <!-- add content to games area -->
     <div class="games-area">
+
+        <!-- create user's selection area -->
         <div id="user-area" class="player-area">
             <div>
                 <h2 class="player-name">You</h2>
@@ -23,8 +27,16 @@
             <div id="user-selection-container" class="selection-container">
                 <img id="user-selection" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
             </div>
+            <div id="user-button-container">
+                <button id="rock" class="btn">Rock</button>
+                <button id="paper" class="btn">Paper</button>
+                <button id="scissors" class="btn">Scissors</button>
+                <button id="lizard" class="btn">Lizard</button>
+                <button id="spock" class="btn">Spock</button>
+            </div>
         </div>
     
+        <!-- create central info area -->
         <div class="central-area">
             <div class="score-area">
                 <div id="score-title">Score</div>
@@ -33,6 +45,7 @@
             <br class="clear">
         </div>
     
+        <!-- create computer's selection area -->
         <div id="cpu-area" class="player-area">
             <div>
                 <h2 class="player-name">CPU</h2>
@@ -44,7 +57,7 @@
         <br class="clear">
     </div>
     
-
+    <!-- link to the JavaScript code -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
