@@ -15,26 +15,33 @@
         <h1>Rock Paper Scissors Lizard Spock</h1>
     </div>
 
-    <div id="user-area" class="player-area">
-        <p>You</p>
-        <div class="selection-container">
-            <img src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
+    <div class="games-area">
+        <div id="user-area" class="player-area">
+            <div>
+                <h2 class="player-name">You</h2>
+            </div>
+            <div class="selection-container">
+                <img src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
+            </div>
+        </div>
+    
+        <div class="central-area">
+            <div class="score-area">
+                <div id="score-title">Score</div>
+                <span id="user-score">0</span> - <span id="cpu-score">0</span>
+            </div>
+        </div>
+    
+        <div id="cpu-area" class="player-area">
+            <div>
+                <h2 class="player-name">CPU</h2>
+            </div>
+            <div class="selection-container">
+                <img src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
+            </div>
         </div>
     </div>
-
-    <div class="central-area">
-        <p>Central Area</p>
-        <div class="score-area">
-            <div id="score-title">Score</div>
-            <span id="user-score">0</span> - <span id="cpu-score">0</span>
-        </div>
-    </div>
-
-    <div id="cpu-area" class="player-area">
-        <p>CPU</p>
-        <div class="selection-container">
-            <img src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
-        </div>    </div>
+    
 
     <script src="assets/js/script.js"></script>
 </body>
