@@ -28,7 +28,8 @@ function runGame(userSelection) {
     let cpuSelection = options[cpuIndex]
     changeImage(cpuImage, cpuSelection);
 
-    return [userSelection, cpuSelection]
+
+    checkAnswer(userSelection, cpuSelection);
 };
 
 /**
@@ -49,6 +50,14 @@ function changeImage(playerImage, selection) {
 }
 
 
+/**
+ * Takes the user and cpu selections and outputs result
+ */
+function checkAnswer(userSelection, cpuSelection) {
+    if (userSelection === cpuSelection) {
+        alert("It's a draw");
+    }
+}
 
 
 
