@@ -25,7 +25,13 @@ function runGame(userSelection) {
         userImage.src = "assets/images/spock.png";
     }
     console.log(userSelection);
-    return userSelection
+
+    // Randomise cpu selection
+    let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    let cpuIndex = Math.floor(Math.random() * 5);
+    let cpuSelection = options[cpuIndex]
+
+    return [userSelection, cpuSelection]
 };
 
 
