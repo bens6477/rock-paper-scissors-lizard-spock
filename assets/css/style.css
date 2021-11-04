@@ -15,6 +15,10 @@
 
 
 /* stlye title area */
+.title-area {
+    margin: 1rem 0;
+}
+
 .title-area h1 {
     font-size: 4rem;
     padding: 1rem 0;
