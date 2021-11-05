@@ -10,18 +10,13 @@ const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
 const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
 const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
 
-let userScore = document.getElementById('user-score').innerHTML;
-let cpuScore = document.getElementById('cpu-score').innerHTML;
-
-
-
+let userScore = document.getElementById('user-score');
+let cpuScore = document.getElementById('cpu-score');
 
 
 // Run game after DOM has finished loading
-
 document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners to buttons 
-
     for (let button of buttons) {
         let userSelection = button.getAttribute("data-type");
         button.addEventListener('click', () => runGame(userSelection));
@@ -33,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
  * Main game function.
  */
 function runGame(userSelection) {
-
     // Change image in user area
     changeImage(userImage, userSelection);
 
@@ -59,7 +53,6 @@ function changeImage(playerImage, selection) {
 function checkAnswer(userSelection, cpuSelection) {
     // Determine the winner
     // Match user selection to index of options
-    // let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     for (let i = 0; i < options.length; i++) {
         if (userSelection !== options[i]) {
             continue;
@@ -97,16 +90,19 @@ function checkAnswer(userSelection, cpuSelection) {
     }
 }
 
+
 /**
  * Receives the winner and increments the score accordingly.
  */
-function incrementScore(winner) {
+ function incrementScore(winner) {
+    console.log('before if 1:', userScore.innerHTML);
     if (winner === 'user') {
         console.log(`${winner} wins.`);
-        document.getElementById('user-score').innerHTML = ++userScore;
+        userScore.innerHTML = ++userScore.innerHTML;
+        console.log('after if 1:', userScore.innerHTML);
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
-        document.getElementById('cpu-score').innerHTML = ++cpuScore;
+        cpuScore.innerHTML = ++cpuScore.innerHTML;
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
     } else {
@@ -114,20 +110,17 @@ function incrementScore(winner) {
         alert("Error! No winner was determined.");
     }
 
-    if (userScore === 10) {
+    console.log('before if 2:', userScore.innerHTML);
+    if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
         alert("Congratulations! You've won the match!");
-        document.getElementById('user-score').innerHTML = 0;
-        document.getElementById('cpu-score').innerHTML = 0;
-    } else if (cpuScore === 10) {
+        userScore.innerHTML = 0;
+        cpuScore.innerHTML = 0;
+        console.log('after if 2:', userScore.innerHTML);
+    } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
         alert("Unlucky! You've lost the match!");
-        document.getElementById('user-score').innerHTML = 0;
-        document.getElementById('cpu-score').innerHTML = 0;
+        userScore.innerHTML = 0;
+        cpuScore.innerHTML = 0;
     }
 }
-
-
-
-
-
