@@ -64,7 +64,12 @@ function checkAnswer(userSelection, cpuSelection) {
                 document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
 
                 console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
-                alert(`You win! ${userSelection} beats ${cpuSelection}.`);
+                Swal.fire({
+                    title: 'Well Done!',
+                    text: `You win! ${userSelection} beats ${cpuSelection}.`,
+                    icon: 'success',
+                    timer: 1500
+                })
                 winner = 'user';
                 incrementScore(winner);
 
@@ -72,13 +77,23 @@ function checkAnswer(userSelection, cpuSelection) {
                 document.getElementById('current-result').innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`;
 
                 console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
-                alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
+                Swal.fire({
+                    title: 'Unlucky!',
+                    text: `You lose! ${cpuSelection} beats ${userSelection}.`,
+                    icon: 'error',
+                    timer: 1500
+                })
                 winner = 'cpu';
                 incrementScore(winner);
 
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
-                alert("It's a draw!");
+                Swal.fire({
+                    title: 'Close!',
+                    text: "It's a draw",
+                    icon: 'info',
+                    timer: 1500
+                })
                 winner = 'nobody';
                 incrementScore(winner);
 
@@ -95,14 +110,12 @@ function checkAnswer(userSelection, cpuSelection) {
  * Receives the winner and increments the score accordingly.
  */
  function incrementScore(winner) {
-    console.log('before if 1:', userScore.innerHTML);
     if (winner === 'user') {
         console.log(`${winner} wins.`);
-        userScore.innerHTML = ++userScore.innerHTML;
-        console.log('after if 1:', userScore.innerHTML);
+        ++userScore.innerHTML;
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
-        cpuScore.innerHTML = ++cpuScore.innerHTML;
+        ++cpuScore.innerHTML;
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
     } else {
@@ -110,13 +123,11 @@ function checkAnswer(userSelection, cpuSelection) {
         alert("Error! No winner was determined.");
     }
 
-    console.log('before if 2:', userScore.innerHTML);
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
         alert("Congratulations! You've won the match!");
         userScore.innerHTML = 0;
         cpuScore.innerHTML = 0;
-        console.log('after if 2:', userScore.innerHTML);
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
         alert("Unlucky! You've lost the match!");
