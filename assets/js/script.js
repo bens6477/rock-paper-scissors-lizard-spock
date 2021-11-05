@@ -108,14 +108,16 @@ function checkAnswer(userSelection, cpuSelection) {
  * Receives the winner and increments the score accordingly
  */
 function incrementScore(winner) {
+
+    let userScore = document.getElementById('user-score').innerHTML;
+    let cpuScore = document.getElementById('cpu-score').innerHTML;
+
     if (winner === 'user') {
         console.log(`${winner} wins.`);
-        let userScore = document.getElementById('user-score').innerHTML;
         document.getElementById('user-score').innerHTML = ++userScore;
 
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
-        let cpuScore = document.getElementById('cpu-score').innerHTML;
         document.getElementById('cpu-score').innerHTML = ++cpuScore;
 
     } else if (winner === 'nobody') {
@@ -124,6 +126,18 @@ function incrementScore(winner) {
     } else {
         console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
+    }
+
+    if (userScore === 10) {
+        console.log("Congratulations! You've won the match!");
+        alert("Congratulations! You've won the match!");
+        document.getElementById('user-score').innerHTML = 0;
+        document.getElementById('cpu-score').innerHTML = 0;
+    } else if (cpuScore === 10) {
+        console.log("Unlucky! You've lost the match!");
+        alert("Unlucky! You've lost the match!");
+        document.getElementById('user-score').innerHTML = 0;
+        document.getElementById('cpu-score').innerHTML = 0;
     }
 }
 
