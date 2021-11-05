@@ -74,13 +74,23 @@ function checkAnswer(userSelection, cpuSelection) {
 
             // Outcome Logic - Determine the case (win, lose, draw)
             let winner;
+            let result = document.getElementById('current-result').innerHTML;
+
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
+                document.getElementById('current-result').innerHTML = `
+                You win!
+                ${userSelection} beats ${cpuSelection}.`;
+                
                 console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
                 alert(`You win! ${userSelection} beats ${cpuSelection}.`);
                 winner = 'user';
                 incrementScore(winner);
 
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
+                document.getElementById('current-result').innerHTML = `
+                You lose!
+                ${cpuSelection} beats ${userSelection}.`;
+
                 console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
                 alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
                 winner = 'cpu';
