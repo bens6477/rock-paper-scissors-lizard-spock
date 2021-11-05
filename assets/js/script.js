@@ -1,8 +1,26 @@
+// Declare constants and variables
+const buttons = document.getElementsByTagName('button');
+const userImage = document.getElementById('user-image');
+const cpuImage = document.getElementById('cpu-image');
+const options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock']; // outcome array: selectionArray = [win, win, lose, lose, draw];
+const paperArray = ['rock', 'spock', 'scissors', 'lizard', 'paper'];
+const scissorsArray = ['paper', 'lizard', 'rock', 'spock', 'scissors'];
+const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
+const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
+const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
+
+let userScore = document.getElementById('user-score').innerHTML;
+let cpuScore = document.getElementById('cpu-score').innerHTML;
+
+
+
+
+
 // Run game after DOM has finished loading
 
 document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners to buttons 
-    let buttons = document.getElementsByTagName('button');
 
     for (let button of buttons) {
         let userSelection = button.getAttribute("data-type");
@@ -16,14 +34,10 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function runGame(userSelection) {
 
-    let userImage = document.getElementById('user-image');
-    let cpuImage = document.getElementById('cpu-image');
-
     // Change image in user area
     changeImage(userImage, userSelection);
 
     // Assign random cpu selection and change image
-    let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let cpuIndex = Math.floor(Math.random() * 5);
     let cpuSelection = options[cpuIndex]
     changeImage(cpuImage, cpuSelection);
@@ -53,20 +67,9 @@ function changeImage(playerImage, selection) {
  * Takes the selections of the user and cpu and determines the outcome.
  */
 function checkAnswer(userSelection, cpuSelection) {
-
-    // outcome array: array = [win, win, lose, lose, draw]
-    let rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock'];
-    let paperArray = ['rock', 'spock', 'scissors', 'lizard', 'paper'];
-    let scissorsArray = ['paper', 'lizard', 'rock', 'spock', 'scissors'];
-    let lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
-    let spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
-
-    // Create matrix (nested array) of all possible cases
-    let cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray];
-
     // Determine the winner
     // Match user selection to index of options
-    let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    // let options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     for (let i = 0; i < options.length; i++) {
         if (userSelection !== options[i]) {
             continue;
@@ -74,22 +77,16 @@ function checkAnswer(userSelection, cpuSelection) {
 
             // Outcome Logic - Determine the case (win, lose, draw)
             let winner;
-            let result = document.getElementById('current-result').innerHTML;
-
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
-                document.getElementById('current-result').innerHTML = `
-                You win!
-                ${userSelection} beats ${cpuSelection}.`;
-                
+                document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
+
                 console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
                 alert(`You win! ${userSelection} beats ${cpuSelection}.`);
                 winner = 'user';
                 incrementScore(winner);
 
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
-                document.getElementById('current-result').innerHTML = `
-                You lose!
-                ${cpuSelection} beats ${userSelection}.`;
+                document.getElementById('current-result').innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`;
 
                 console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
                 alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
@@ -114,9 +111,6 @@ function checkAnswer(userSelection, cpuSelection) {
  * Receives the winner and increments the score accordingly.
  */
 function incrementScore(winner) {
-    let userScore = document.getElementById('user-score').innerHTML;
-    let cpuScore = document.getElementById('cpu-score').innerHTML;
-
     if (winner === 'user') {
         console.log(`${winner} wins.`);
         document.getElementById('user-score').innerHTML = ++userScore;

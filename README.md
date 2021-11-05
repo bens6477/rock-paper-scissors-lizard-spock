@@ -53,17 +53,12 @@ Various additional features would bring a greater user experience to the website
 
 ## Testing ***
 * All links and images on the website work correctly and all elements are responsive to screen size.
-* The contact form was tested by checking all possible input combinations. Such checks included:
-    * Ensuring that the form is not submitted empty, without any information inputted.
-    * Ensuring that the all required field were completed before submitting the form. All fields except the message were required, as users do not need to submit a comment.
-    * Ensuring that the inputted email address was in the correct form and included the '@' sign.
-* All embedded videos play within the site when clicked and successfully redirect to the Youtube site when requested.
 * The website was tested across various browsers, including Google Chrome, Mozilla Firefox and Microsoft Edge.
 ### Developer Tools ***
 * The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
 * The website was responsive across screen sizes between 320px and 1600px in width. Content readablility was optimised by altering the size and positioning of elements. 
-* The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
-* As mentioned before, the eager-loading of embedded videos caused a significant reduction to the performance on mobile devices. Thus, the 'Resources' page exhibited a lower performance score compared to the other pages.
+* ***The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
+
 
 #### Desktop Homepage Lighthouse Results
 ![Desktop Homepage Lightouse Results]()
