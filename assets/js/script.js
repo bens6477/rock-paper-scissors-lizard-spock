@@ -104,14 +104,23 @@ function checkAnswer(userSelection, cpuSelection) {
     }
 }
 
-
+/**
+ * Receives the winner and increments the score accordingly
+ */
 function incrementScore(winner) {
     if (winner === 'user') {
         console.log(`${winner} wins.`);
+        let userScore = document.getElementById('user-score').innerHTML;
+        document.getElementById('user-score').innerHTML = ++userScore;
+
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
+        let cpuScore = document.getElementById('cpu-score').innerHTML;
+        document.getElementById('cpu-score').innerHTML = ++cpuScore;
+
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
+
     } else {
         console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
