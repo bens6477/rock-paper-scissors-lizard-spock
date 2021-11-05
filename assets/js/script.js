@@ -57,35 +57,26 @@ function checkAnswer(userSelection, cpuSelection) {
         if (userSelection !== options[i]) {
             continue;
         } else {
-
             // Outcome Logic - Determine the case (win, lose, draw)
             let winner;
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
-
-                console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
                 Swal.fire({
                     title: 'Well Done!',
                     text: `You win! ${userSelection} beats ${cpuSelection}.`,
                     icon: 'success',
                     timer: 1500
                 })
-                winner = 'user';
-                incrementScore(winner);
-
+                incrementScore('user');
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
-                document.getElementById('current-result').innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`;
-
-                console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
+                document.getElementById('current-result').innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`
                 Swal.fire({
                     title: 'Unlucky!',
                     text: `You lose! ${cpuSelection} beats ${userSelection}.`,
                     icon: 'error',
                     timer: 1500
                 })
-                winner = 'cpu';
-                incrementScore(winner);
-
+                incrementScore('cpu');
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
                 Swal.fire({
@@ -94,9 +85,7 @@ function checkAnswer(userSelection, cpuSelection) {
                     icon: 'info',
                     timer: 1500
                 })
-                winner = 'nobody';
-                incrementScore(winner);
-
+                incrementScore('nobody');
             } else {
                 console.log("Error! Unknown inputs.");
                 alert("Error! Unknown inputs.");
