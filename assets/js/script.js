@@ -49,17 +49,7 @@ function runGame(userSelection) {
  * Changes the player's image depending on selection.
  */
 function changeImage(playerImage, selection) {
-    if (selection === "rock") {
-        playerImage.src = "assets/images/rock.png";
-    } else if (selection === "paper") {
-        playerImage.src = "assets/images/paper.png";
-    } else if (selection === "scissors") {
-        playerImage.src = "assets/images/scissors.png";
-    } else if (selection === "lizard") {
-        playerImage.src = "assets/images/lizard.png";
-    } else if (selection === "spock") {
-        playerImage.src = "assets/images/spock.png";
-    }
+    playerImage.src = `assets/images/${selection}.png`;
 }
 
 
