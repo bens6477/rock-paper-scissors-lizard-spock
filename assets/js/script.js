@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /**
- * Main game loop
+ * Main game function.
  */
 function runGame(userSelection) {
 
@@ -28,12 +28,11 @@ function runGame(userSelection) {
     let cpuSelection = options[cpuIndex]
     changeImage(cpuImage, cpuSelection);
 
-
     checkAnswer(userSelection, cpuSelection);
 };
 
 /**
- * Changes the player's image depending on selection
+ * Changes the player's image depending on selection.
  */
 function changeImage(playerImage, selection) {
     if (selection === "rock") {
@@ -51,7 +50,7 @@ function changeImage(playerImage, selection) {
 
 
 /**
- * Takes the selections of the user and cpu and determines the outcome
+ * Takes the selections of the user and cpu and determines the outcome.
  */
 function checkAnswer(userSelection, cpuSelection) {
 
@@ -78,21 +77,18 @@ function checkAnswer(userSelection, cpuSelection) {
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 console.log(`You win! ${userSelection} beats ${cpuSelection}.`);
                 alert(`You win! ${userSelection} beats ${cpuSelection}.`);
-
                 winner = 'user';
                 incrementScore(winner);
 
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
                 console.log(`You lose! ${cpuSelection} beats ${userSelection}.`);
                 alert(`You lose! ${cpuSelection} beats ${userSelection}.`);
-
                 winner = 'cpu';
                 incrementScore(winner);
 
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
                 alert("It's a draw!");
-
                 winner = 'nobody';
                 incrementScore(winner);
 
@@ -105,24 +101,20 @@ function checkAnswer(userSelection, cpuSelection) {
 }
 
 /**
- * Receives the winner and increments the score accordingly
+ * Receives the winner and increments the score accordingly.
  */
 function incrementScore(winner) {
-
     let userScore = document.getElementById('user-score').innerHTML;
     let cpuScore = document.getElementById('cpu-score').innerHTML;
 
     if (winner === 'user') {
         console.log(`${winner} wins.`);
         document.getElementById('user-score').innerHTML = ++userScore;
-
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
         document.getElementById('cpu-score').innerHTML = ++cpuScore;
-
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
-
     } else {
         console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
