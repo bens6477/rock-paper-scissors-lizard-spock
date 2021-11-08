@@ -26,10 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener('click', function() {
             if (button.getAttribute('data-type') === 'play-game') {
-                rulesArea.classList.add('hide');
-                reviewArea.classList.add('hide');
-                matchArea.classList.remove('hide');
-                resetScore();
+                resetBoard();
             } else {
                 let userSelection = button.getAttribute("data-type");
                 runGame(userSelection)
@@ -158,12 +155,10 @@ function checkAnswer(userSelection, cpuSelection) {
         console.log("Congratulations! You've won the match!");
         // alert("Congratulations! You've won the match!");
         reviewScores();
-        // resetScore();
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
         // alert("Unlucky! You've lost the match!");
         reviewScores();
-        // resetScore();
     }    
 }
 
@@ -178,8 +173,11 @@ function reviewScores() {
 /**
  * Reset score to 0 after a player wins.
  */
-function resetScore() {
+function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
+    rulesArea.classList.add('hide');
+    reviewArea.classList.add('hide');
+    matchArea.classList.remove('hide');
 }
 
 
