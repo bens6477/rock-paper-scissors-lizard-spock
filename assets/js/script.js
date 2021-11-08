@@ -15,16 +15,27 @@ let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
 
-
-let gamesArea = document.getElementById('games-area');
+const rulesArea = document.getElementById('rules-area');
+const matchArea = document.getElementById('match-area');
+const reviewArea = document.getElementById('review-area');
 
 
 // Run game after DOM has finished loading
 document.addEventListener("DOMContentLoaded", function() {
-    // Add event listeners to buttons 
+    // Add event listeners to buttons
     for (let button of buttons) {
-        let userSelection = button.getAttribute("data-type");
-        button.addEventListener('click', () => runGame(userSelection));
+        button.addEventListener('click', function() {
+            if (button.getAttribute('data-type') === 'play-game') {
+                rulesArea.classList.add('hide');
+                reviewArea.classList.add('hide');
+                matchArea.classList.remove('hide');
+            } else {
+                let userSelection = button.getAttribute("data-type");
+                runGame(userSelection)
+            }
+            
+        });
+        
     }
 })
 
