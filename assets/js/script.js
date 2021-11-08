@@ -120,6 +120,8 @@ function checkAnswer(userSelection, cpuSelection) {
         alert("Unlucky! You've lost the match!");
         resetScore();
     }
+
+    countdown();
 }
 
 /**
@@ -127,4 +129,13 @@ function checkAnswer(userSelection, cpuSelection) {
  */
 function resetScore() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
+}
+
+
+function countdown() {
+    let activeTitle = document.getElementById('title-rock');
+    activeTitle.classList.add('active-title');
+    setTimeout(function(){
+        activeTitle.classList.remove('active-title');
+    },1000);
 }

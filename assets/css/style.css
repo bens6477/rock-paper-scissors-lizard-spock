@@ -85,3 +85,13 @@
 .score-area {
     font-size: 3rem;
 }
+
+
+/* style active title with countdown */
+.normal-title {
+    color: black;
+}
+
+.active-title {
+    color: red;
+}
