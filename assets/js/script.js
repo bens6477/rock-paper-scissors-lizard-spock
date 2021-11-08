@@ -10,6 +10,8 @@ const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
 const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
 const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
 
+let titleIndex = 0;
+let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
 
@@ -28,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
  * Main game function.
  */
 function runGame(userSelection) {
+    titleIndex = 0;
+    activeTitle = document.getElementById(`title-${options[titleIndex]}`);
     countdown();
 
     // Change image in user area
@@ -40,6 +44,30 @@ function runGame(userSelection) {
 
     checkAnswer(userSelection, cpuSelection);
 };
+
+
+/**
+ * Create function to run countdown procedure.
+ */
+function countdown() {
+    activeTitle.classList.add('active-title');
+    setTimeout(tick, 300);
+}
+
+/**
+ * Function loops through each object in title and changes text color for interval.
+ */
+function tick() {
+    activeTitle.classList.remove('active-title');
+	titleIndex += 1;
+
+	if (titleIndex < 5) {
+        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+        activeTitle.classList.add('active-title');
+		setTimeout(tick, 300);
+	}
+}
+
 
 /**
  * Changes the player's image depending on selection.
@@ -59,7 +87,7 @@ function checkAnswer(userSelection, cpuSelection) {
         if (userSelection !== options[i]) {
             continue;
         } else {
-            // Outcome Logic - Determine the case (win, lose, draw)
+            // Outcome   - Determine the case (win, lose, draw)
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
                 Swal.fire({
@@ -134,28 +162,3 @@ function resetScore() {
 }
 
 
-let titleIndex = 0;
-let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-
-/**
- * Create function to run countdown procedure.
- */
-function countdown() {
-    activeTitle.classList.add('active-title');
-    setTimeout(tick, 300);
-}
-
-/**
- * Function loops through each object in title and changes text color for interval.
- */
-function tick() {
-	console.log(`${options[titleIndex]}`);
-    activeTitle.classList.remove('active-title');
-	titleIndex += 1;
-
-	if (titleIndex < 5) {
-        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-        activeTitle.classList.add('active-title');
-		setTimeout(tick, 300);
-	}
-}
