@@ -58,7 +58,6 @@ function checkAnswer(userSelection, cpuSelection) {
             continue;
         } else {
             // Outcome Logic - Determine the case (win, lose, draw)
-            let winner;
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
                 Swal.fire({
@@ -115,12 +114,17 @@ function checkAnswer(userSelection, cpuSelection) {
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
         alert("Congratulations! You've won the match!");
-        userScore.innerHTML = 0;
-        cpuScore.innerHTML = 0;
+        resetScore();
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
         alert("Unlucky! You've lost the match!");
-        userScore.innerHTML = 0;
-        cpuScore.innerHTML = 0;
+        resetScore();
     }
+}
+
+/**
+ * Reset score to 0 after a player wins.
+ */
+function resetScore() {
+    userScore.innerHTML = cpuScore.innerHTML = 0;
 }
