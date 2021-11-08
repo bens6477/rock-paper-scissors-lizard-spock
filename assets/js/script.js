@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
  * Main game function.
  */
 function runGame(userSelection) {
+    countdown();
+
     // Change image in user area
     changeImage(userImage, userSelection);
 
@@ -121,7 +123,7 @@ function checkAnswer(userSelection, cpuSelection) {
         resetScore();
     }
 
-    countdown();
+    
 }
 
 /**
@@ -132,10 +134,28 @@ function resetScore() {
 }
 
 
+let titleIndex = 0;
+let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+
+/**
+ * Create function to run countdown procedure.
+ */
 function countdown() {
-    let activeTitle = document.getElementById('title-rock');
     activeTitle.classList.add('active-title');
-    setTimeout(function(){
-        activeTitle.classList.remove('active-title');
-    },1000);
+    setTimeout(tick, 300);
+}
+
+/**
+ * Function loops through each object in title and changes text color for interval.
+ */
+function tick() {
+	console.log(`${options[titleIndex]}`);
+    activeTitle.classList.remove('active-title');
+	titleIndex += 1;
+
+	if (titleIndex < 5) {
+        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+        activeTitle.classList.add('active-title');
+		setTimeout(tick, 300);
+	}
 }
