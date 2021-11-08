@@ -16,6 +16,9 @@ let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
 
 
+let gamesArea = document.getElementById('games-area');
+
+
 // Run game after DOM has finished loading
 document.addEventListener("DOMContentLoaded", function() {
     // Add event listeners to buttons 
@@ -151,6 +154,7 @@ function checkAnswer(userSelection, cpuSelection) {
         resetScore();
     }
 
+    gamesArea.classList.add('hide');
     
 }
 
