@@ -152,10 +152,7 @@ function checkAnswer(userSelection, cpuSelection) {
         console.log("Unlucky! You've lost the match!");
         alert("Unlucky! You've lost the match!");
         resetScore();
-    }
-
-    gamesArea.classList.add('hide');
-    
+    }    
 }
 
 /**
