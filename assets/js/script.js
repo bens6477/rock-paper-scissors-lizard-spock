@@ -153,11 +153,21 @@ function checkAnswer(userSelection, cpuSelection) {
 
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
-        // alert("Congratulations! You've won the match!");
+        Swal.fire({
+            title: 'Well Done!',
+            text: "Congratulations! You've won the match!",
+            icon: 'success',
+            timer: 1500
+        })
         reviewScores();
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
-        // alert("Unlucky! You've lost the match!");
+        Swal.fire({
+            title: 'Unlucky!',
+            text: "You've lost the match! Better luck next time!",
+            icon: 'error',
+            timer: 1500
+        })
         reviewScores();
     }    
 }
@@ -179,5 +189,3 @@ function resetBoard() {
     reviewArea.classList.add('hide');
     matchArea.classList.remove('hide');
 }
-
-
