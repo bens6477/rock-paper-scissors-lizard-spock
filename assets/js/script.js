@@ -29,13 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 rulesArea.classList.add('hide');
                 reviewArea.classList.add('hide');
                 matchArea.classList.remove('hide');
+                resetScore();
             } else {
                 let userSelection = button.getAttribute("data-type");
                 runGame(userSelection)
             }
-            
         });
-        
     }
 })
 
@@ -157,13 +156,23 @@ function checkAnswer(userSelection, cpuSelection) {
 
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
-        alert("Congratulations! You've won the match!");
-        resetScore();
+        // alert("Congratulations! You've won the match!");
+        reviewScores();
+        // resetScore();
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
-        alert("Unlucky! You've lost the match!");
-        resetScore();
+        // alert("Unlucky! You've lost the match!");
+        reviewScores();
+        // resetScore();
     }    
+}
+
+function reviewScores() {
+    console.log('reviewing scores');
+    document.getElementById('user-score-review').innerHTML = userScore.innerHTML;
+    document.getElementById('cpu-score-review').innerHTML = cpuScore.innerHTML;
+    matchArea.classList.add('hide');
+    reviewArea.classList.remove('hide');
 }
 
 /**
