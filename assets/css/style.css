@@ -104,7 +104,14 @@
 
 
 /* add media queries for responsive deisgn */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
+    .title-area h1 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
     .title-area h1 {
         font-size: 1.5rem;
         padding: 1rem 0;
@@ -139,6 +146,12 @@
         width: 100%;
     }
 
+    .image-container img {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 400px) {
     .image-container img {
         width: 50%;
     }
