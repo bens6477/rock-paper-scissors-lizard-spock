@@ -142,6 +142,9 @@ function checkAnswer(userSelection, cpuSelection) {
     }    
 }
 
+/**
+ * Switches UI to review area to summarise the match score.
+ */
 function reviewScores() {
     console.log('reviewing scores');
     userScoreReview.innerHTML = userScore.innerHTML;
