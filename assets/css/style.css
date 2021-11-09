@@ -41,8 +41,8 @@
 
 #rules {
     margin: 0 auto;
-    width: 40%;
     padding: 1rem;
+    font-size: 1.25rem;
 }
 
 #rules ol {
@@ -146,7 +146,7 @@
         padding: 1rem 0;
     }
 
-    .games-area {
+    .games-area, #rules-area {
         width: 100%;
     }
 
