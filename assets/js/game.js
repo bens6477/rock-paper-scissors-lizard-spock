@@ -50,6 +50,7 @@ function runGame(userSelection) {
     titleIndex = 0;
     activeTitle = document.getElementById(`title-${options[titleIndex]}`);
     activeTitle.classList.add('active-title');
+    countdownArea.innerHTML = options[titleIndex];
     setTimeout(() => countdown(userSelection), 300);
 };
 
@@ -64,6 +65,7 @@ function countdown(userSelection) {
 	if (titleIndex < 5) {
         activeTitle = document.getElementById(`title-${options[titleIndex]}`);
         activeTitle.classList.add('active-title');
+        countdownArea.innerHTML = options[titleIndex];
 		setTimeout(() => countdown(userSelection), 300);
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
