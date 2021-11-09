@@ -42,35 +42,24 @@ document.addEventListener("DOMContentLoaded", function() {
 function runGame(userSelection) {
     titleIndex = 0;
     activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-    countdown(userSelection);
+    activeTitle.classList.add('active-title');
+    setTimeout(() => countdown(userSelection), 300);
 };
 
 
 /**
- * Create function to run countdown procedure.
+ * Create function to run countdown procedure before changing
+ * images and checking answer.
  */
 function countdown(userSelection) {
-    activeTitle.classList.add('active-title');
-    setTimeout(() => tick(userSelection), 300);
-}
-
-/**
- * Function loops through each object in title and changes text color for interval.
- */
-function tick(userSelection) {
     activeTitle.classList.remove('active-title');
 	titleIndex += 1;
-
 	if (titleIndex < 5) {
         activeTitle = document.getElementById(`title-${options[titleIndex]}`);
         activeTitle.classList.add('active-title');
-		setTimeout(() => tick(userSelection), 300);
-	}
-    
-    if (titleIndex === 5) {
-        // Change image in user area
+		setTimeout(() => countdown(userSelection), 300);
+	} else if (titleIndex === 5) {
         changeImage(userImage, userSelection);
-        // Assign random cpu selection and change image
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex]
         changeImage(cpuImage, cpuSelection);
