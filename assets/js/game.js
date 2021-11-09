@@ -124,17 +124,20 @@ function checkAnswer(userSelection, cpuSelection) {
     if (winner === 'user') {
         console.log(`${winner} wins.`);
         ++userScore.innerHTML;
-        userScore.style.color = 'green'
-        cpuScore.style.color = 'red'
+        userScore.style.color = 'green';
+        cpuScore.style.color = 'red';
+        currentResult.style.color = 'green';
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
         ++cpuScore.innerHTML;
-        userScore.style.color = 'red'
-        cpuScore.style.color = 'green'
+        userScore.style.color = 'red';
+        cpuScore.style.color = 'green';
+        currentResult.style.color = 'red';
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
-        userScore.style.color = 'black'
-        cpuScore.style.color = 'black'
+        userScore.style.color = 'black';
+        cpuScore.style.color = 'black';
+        currentResult.style.color = 'black';
     } else {
         console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
@@ -187,8 +190,10 @@ function reviewScores() {
  */
 function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
+    currentResult.innerHTML = "";
     userScore.style.color = 'black'
     cpuScore.style.color = 'black'
+    currentResult.style.color = 'black'
     rulesArea.classList.add('hide');
     reviewArea.classList.add('hide');
     matchArea.classList.remove('hide');
