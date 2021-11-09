@@ -105,7 +105,8 @@
     padding: 1rem;
 }
 
-/* style user selection buttons */
+
+/* style buttons */
 .btn {
     padding: 0.5rem;
     margin: 0.5rem;
@@ -113,6 +114,28 @@
     border-radius: 0.25rem;
     color: #ffffff;
     background-color: #1b1d4e;
+}
+
+/* style buttons within user image */
+
+.btn-user {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+#user-image-container {
+    position: relative;
+}
+
+#rock-button {
+    top: 23%;
+    left: 50%;
+    transform: translate(-53%, -55%);
 }
 
 
