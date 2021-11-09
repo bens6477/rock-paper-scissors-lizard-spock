@@ -64,11 +64,19 @@
 .score-area {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
 }
 
+.results-area {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    width: 20%;
+}
 
 /* style player areas */
 .image-container img {
