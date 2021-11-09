@@ -1,4 +1,7 @@
 // Declare constants and variables
+const rulesArea = document.getElementById('rules-area');
+const matchArea = document.getElementById('match-area');
+const reviewArea = document.getElementById('review-area');
 const buttons = document.getElementsByTagName('button');
 const userImage = document.getElementById('user-image');
 const cpuImage = document.getElementById('cpu-image');
@@ -15,9 +18,10 @@ let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
 
-const rulesArea = document.getElementById('rules-area');
-const matchArea = document.getElementById('match-area');
-const reviewArea = document.getElementById('review-area');
+
+const currentResult = document.getElementById('current-result');
+const userScoreReview = document.getElementById('user-score-review');
+const cpuScoreReview = document.getElementById('cpu-score-review');
 
 
 // Run game after DOM has finished loading
@@ -59,9 +63,9 @@ function countdown(userSelection) {
         activeTitle.classList.add('active-title');
 		setTimeout(() => countdown(userSelection), 300);
 	} else if (titleIndex === 5) {
-        changeImage(userImage, userSelection);
         let cpuIndex = Math.floor(Math.random() * 5);
-        let cpuSelection = options[cpuIndex]
+        let cpuSelection = options[cpuIndex];
+        changeImage(userImage, userSelection);
         changeImage(cpuImage, cpuSelection);
         checkAnswer(userSelection, cpuSelection);
     }
@@ -88,7 +92,7 @@ function checkAnswer(userSelection, cpuSelection) {
         } else {
             // Outcome   - Determine the case (win, lose, draw)
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
-                document.getElementById('current-result').innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
+                currentResult.innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
                 Swal.fire({
                     title: 'Well Done!',
                     text: `You win! ${userSelection} beats ${cpuSelection}.`,
@@ -97,7 +101,7 @@ function checkAnswer(userSelection, cpuSelection) {
                 })
                 incrementScore('user');
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
-                document.getElementById('current-result').innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`
+                currentResult.innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`
                 Swal.fire({
                     title: 'Unlucky!',
                     text: `You lose! ${cpuSelection} beats ${userSelection}.`,
@@ -163,8 +167,8 @@ function checkAnswer(userSelection, cpuSelection) {
 
 function reviewScores() {
     console.log('reviewing scores');
-    document.getElementById('user-score-review').innerHTML = userScore.innerHTML;
-    document.getElementById('cpu-score-review').innerHTML = cpuScore.innerHTML;
+    userScoreReview.innerHTML = userScore.innerHTML;
+    cpuScoreReview.innerHTML = cpuScore.innerHTML;
     matchArea.classList.add('hide');
     reviewArea.classList.remove('hide');
 }
