@@ -170,8 +170,10 @@ function checkAnswer(userSelection, cpuSelection) {
  * Resets images to selection image after interval.
  */
 function imageReset() {
-    setTimeout(() => changeImage(userImage, 'selection', 'jpg'), 2000);
-    setTimeout(() => changeImage(cpuImage, 'selection', 'jpg'), 2000);
+    setTimeout(function() {
+        changeImage(userImage, 'selection', 'jpg');
+        changeImage(cpuImage, 'selection', 'jpg');
+    }, 2000);
 }
 
 /**
