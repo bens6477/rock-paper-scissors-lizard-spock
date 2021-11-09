@@ -138,19 +138,23 @@
     }
 
     .central-area {
+        display: block;
         width: 100%;
     }
 
-    #score-area {
-        display: block;
+    #score-area, #results-area, #countdown-area {
         position: static;
         left: 0;
         top: 0;
         transform: translate(0, 0);
+        width: 100%;
+    }
+
+    #score-area {
         font-size: 2rem;
     }
 
-    #score-title, #result-title {
+    #score-title {
         display: none;
     }
 
