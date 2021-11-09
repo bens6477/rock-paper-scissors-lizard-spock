@@ -90,11 +90,11 @@
 
 /* style active title with countdown */
 .normal-title {
-    color: black;
+    color: #000000;
 }
 
 .active-title {
-    color: red;
+    color: #ff0000;
 }
 
 /* add class to hide sections upon request */
