@@ -97,14 +97,16 @@
 /* style images */
 .rules-image-container img {
     width: 60%;
-    padding: 1rem;
+    margin: 1rem;
+}
+
+.image-container {
+    margin: 1rem;
 }
 
 .image-container img {
     width: 100%;
-    padding: 1rem;
 }
-
 
 /* style buttons */
 .btn {
@@ -119,9 +121,10 @@
 /* style buttons within user image */
 
 .btn-user {
-    padding: 0.5rem;
-    margin: 0.5rem;
+    padding: 0;
+    margin: 0;
     position: absolute;
+    transform: translate(-50%, -50%);
     width: 30%;
     height: 30%;
     border-radius: 50%;
@@ -133,12 +136,30 @@
 }
 
 #rock-button {
-    top: 23%;
+    top: 21%;
     left: 50%;
-    transform: translate(-53%, -55%);
+    
 }
 
+#paper-button {
+    top: 43%;
+    left: 80%;
+}
 
+#scissors-button {
+    top: 77%;
+    left: 32%;
+}
+
+#lizard-button {
+    top: 77%;
+    left: 69%;
+}
+
+#spock-button {
+    top: 43%;
+    left: 20%;
+}
 
 /* style active title with countdown */
 .normal-title {
