@@ -33,7 +33,7 @@
 
 /* style and position game area sections */
 .games-area {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     position: relative;
 }
@@ -105,4 +105,28 @@
 /* add class to hide sections upon request */
 .hide {
     display: none;
+}
+
+
+/* add media queries for responsive deisgn */
+@media screen and (max-width: 900px) {
+    .title-area h1 {
+        font-size: 3rem;
+        padding: 1rem 0;
+    }
+
+    .games-area {
+        width: 100%;
+    }
+
+    .score-area {
+        position: static;
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+    }
+
+    #user-area, #cpu-area {
+        clear: both;
+    }
 }
