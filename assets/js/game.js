@@ -2,6 +2,9 @@
 const rulesArea = document.getElementById('rules-area');
 const matchArea = document.getElementById('match-area');
 const reviewArea = document.getElementById('review-area');
+const scoreArea = document.getElementById('score-area');
+const resultsArea = document.getElementById('results-area');
+const countdownArea = document.getElementById('countdown-area');
 const buttons = document.getElementsByTagName('button');
 const userImage = document.getElementById('user-image');
 const cpuImage = document.getElementById('cpu-image');
@@ -41,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * Main game function.
  */
 function runGame(userSelection) {
+    scoreArea.classList.add('hide');
+    resultsArea.classList.add('hide');
+    countdownArea.classList.remove('hide');
     titleIndex = 0;
     activeTitle = document.getElementById(`title-${options[titleIndex]}`);
     activeTitle.classList.add('active-title');
@@ -62,9 +68,13 @@ function countdown(userSelection) {
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex];
+        scoreArea.classList.remove('hide');
+        resultsArea.classList.remove('hide');
+        countdownArea.classList.add('hide');
         changeImage(userImage, userSelection, 'png');
         changeImage(cpuImage, cpuSelection, 'png');
         checkAnswer(userSelection, cpuSelection);
+        
     }
 }
 
