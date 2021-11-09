@@ -22,9 +22,8 @@ let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
 
 
-// Run game after DOM has finished loading
+// Run game after DOM has finished loading, listening for button clicks.
 document.addEventListener("DOMContentLoaded", function() {
-    // Add event listeners to buttons
     for (let button of buttons) {
         button.addEventListener('click', function() {
             if (button.getAttribute('data-type') === 'play-game') {
@@ -79,42 +78,22 @@ function changeImage(playerImage, selection) {
 
 
 /**
- * Takes the selections of the user and cpu and determines the outcome.
+ * Takes the selections of the user and cpu and determines the
+ * outcome (win, lose, draw).
  */
 function checkAnswer(userSelection, cpuSelection) {
-    // Determine the winner
-    // Match user selection to index of options
     for (let i = 0; i < options.length; i++) {
         if (userSelection !== options[i]) {
             continue;
         } else {
-            // Outcome   - Determine the case (win, lose, draw)
             if (cpuSelection === cases[i][0] || cpuSelection === cases[i][1]) {
                 currentResult.innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
-                Swal.fire({
-                    title: 'Well Done!',
-                    text: `You win! ${userSelection} beats ${cpuSelection}.`,
-                    icon: 'success',
-                    timer: 1500
-                })
                 incrementScore('user');
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
                 currentResult.innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`
-                Swal.fire({
-                    title: 'Unlucky!',
-                    text: `You lose! ${cpuSelection} beats ${userSelection}.`,
-                    icon: 'error',
-                    timer: 1500
-                })
                 incrementScore('cpu');
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
-                Swal.fire({
-                    title: 'Close!',
-                    text: "It's a draw",
-                    icon: 'info',
-                    timer: 1500
-                })
                 incrementScore('nobody');
             } else {
                 console.log("Whoops! Try another option.");
