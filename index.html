@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- link CSS stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- link SweetAlert functionality -->
+    <!-- link to SweetAlert -->
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-
     <title>Rock, Paper, Scissors,Lizard, Spock</title>
 </head>
 <body>
 
     <!-- create title area -->
-    <div class="title-area">
+    <section class="title-area">
         <h1>
             <span id="title-rock">Rock</span>, 
             <span id="title-paper">Paper</span>, 
@@ -26,16 +21,16 @@
             <span id="title-lizard">Lizard</span>, 
             <span id="title-spock">Spock</span>
         </h1>
-    </div>
+    </sction>
 
     <!-- add content to rules area -->
-    <div id="rules-area" class="games-area">
+    <section id="rules-area" class="games-area">
         <h2>Welcome To The Game</h2>
         <div id="rules-image-container" class="image-container">
             <img id="rules-image" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
         </div>
         <button data-type="play-game" class="btn">Play Game</button>
-    </div>
+    </section>
 
     <!-- add content to games area -->
     <div id="match-area" class="games-area hide">
@@ -82,14 +77,15 @@
     </div>
 
     <!-- add content to review area -->
-    <div id="review-area" class="games-area hide">
+    <section id="review-area" class="games-area hide">
         <h2>Results</h2>
         <span id="user-score-review"></span> - <span id="cpu-score-review"></span>
         <br class="clear">
         <button data-type="play-game" class="btn">Play Again</button>
-    </div>
+    </section>
     
     <!-- link to the JavaScript code -->
     <script src="assets/js/game.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </body>
 </html>
