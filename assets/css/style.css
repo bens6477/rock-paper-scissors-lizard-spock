@@ -28,9 +28,6 @@
     padding: 0.5rem 0;
 }
 
-
-
-
 /* style and position game area sections */
 .games-area {
     width: 80%;
@@ -40,6 +37,17 @@
 
 #rules-area {
     width: 50%;
+}
+
+#rules {
+    margin: 0 auto;
+    width: 40%;
+    padding: 1rem;
+}
+
+#rules ol {
+    list-style-position: inside;
+    padding-left: 0;
 }
 
 .player-area, .central-area {
@@ -86,7 +94,12 @@
     font-size: 2rem;
 }
 
-/* style player areas */
+/* style images */
+.rules-image-container img {
+    width: 60%;
+    padding: 1rem;
+}
+
 .image-container img {
     width: 100%;
     padding: 1rem;
