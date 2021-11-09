@@ -38,40 +38,6 @@
 
     <!-- add content to games area -->
     <div id="match-area" class="games-area hide">
-
-        <!-- create user's selection area -->
-        <div id="user-area" class="player-area">
-            <div>
-                <h2 class="player-name">You</h2>
-            </div>
-
-            <div id="user-image-container" class="image-container">
-                <img id="user-image" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
-            </div>
-
-            <div id="user-button-container">
-                <button data-type="rock" class="btn">Rock</button>
-                <button data-type="paper" class="btn">Paper</button>
-                <button data-type="scissors" class="btn">Scissors</button>
-                <button data-type="lizard" class="btn">Lizard</button>
-                <button data-type="spock" class="btn">Spock</button>
-            </div>
-        </div>
-    
-        <!-- create central info area -->
-        <div class="central-area">
-            <div class="score-area">
-                <div id="score-title">Score</div>
-                <span id="user-score">0</span> - <span id="cpu-score">0</span>
-            </div>
-
-            <div class="results-area">
-                <div id="result-title">Result</div>
-                <span id="current-result"></span>
-            </div>
-            <br class="clear">
-        </div>
-    
         <!-- create computer's selection area -->
         <div id="cpu-area" class="player-area">
             <div>
@@ -81,9 +47,40 @@
                 <img id="cpu-image" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
             </div>
         </div>
+    
+        <!-- create central info area -->
+        <div class="central-area">
+            <div class="score-area">
+                <div id="score-title">Score</div>
+                <span id="user-score">0</span> - <span id="cpu-score">0</span>
+            </div>
+            <div class="results-area">
+                <div id="result-title">Result</div>
+                <span id="current-result"></span>
+            </div>
+            <br class="clear">
+        </div>
+
+        <!-- create user's selection area -->
+        <div id="user-area" class="player-area">
+            <div>
+                <h2 class="player-name">You</h2>
+            </div>
+            <div id="user-image-container" class="image-container">
+                <img id="user-image" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
+            </div>
+            <div id="user-button-container">
+                <button data-type="rock" class="btn">Rock</button>
+                <button data-type="paper" class="btn">Paper</button>
+                <button data-type="scissors" class="btn">Scissors</button>
+                <button data-type="lizard" class="btn">Lizard</button>
+                <button data-type="spock" class="btn">Spock</button>
+            </div>
+        </div>
         <br class="clear">
     </div>
 
+    <!-- add content to review area -->
     <div id="review-area" class="games-area hide">
         <h2>Results</h2>
         <span id="user-score-review"></span> - <span id="cpu-score-review"></span>
