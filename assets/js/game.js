@@ -12,16 +12,14 @@ const scissorsArray = ['paper', 'lizard', 'rock', 'spock', 'scissors'];
 const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
 const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
 const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
+const currentResult = document.getElementById('current-result');
+const userScoreReview = document.getElementById('user-score-review');
+const cpuScoreReview = document.getElementById('cpu-score-review');
 
 let titleIndex = 0;
 let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
-
-
-const currentResult = document.getElementById('current-result');
-const userScoreReview = document.getElementById('user-score-review');
-const cpuScoreReview = document.getElementById('cpu-score-review');
 
 
 // Run game after DOM has finished loading
@@ -119,8 +117,8 @@ function checkAnswer(userSelection, cpuSelection) {
                 })
                 incrementScore('nobody');
             } else {
-                console.log("Error! Unknown inputs.");
-                alert("Error! Unknown inputs.");
+                console.log("Whoops! Try another option.");
+                alert("Whoops! Try another option.");
             }
         }
     }
