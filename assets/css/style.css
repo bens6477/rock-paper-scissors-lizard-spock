@@ -67,6 +67,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-size: 3rem;
 }
 
 
@@ -87,10 +88,6 @@
     background-color: #1b1d4e;
 }
 
-/* style score area */
-.score-area {
-    font-size: 3rem;
-}
 
 
 /* style active title with countdown */
@@ -124,9 +121,13 @@
         left: 0;
         top: 0;
         transform: translate(0, 0);
+        display: block;
     }
 
     #user-area, #cpu-area {
+        float: none;
         clear: both;
+        display: block;
+        margin: 0 auto;
     }
 }
