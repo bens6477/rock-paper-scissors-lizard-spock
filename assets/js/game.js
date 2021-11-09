@@ -42,40 +42,40 @@ document.addEventListener("DOMContentLoaded", function() {
 function runGame(userSelection) {
     titleIndex = 0;
     activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-    countdown();
-
-    // Change image in user area
-    changeImage(userImage, userSelection);
-
-    // Assign random cpu selection and change image
-    let cpuIndex = Math.floor(Math.random() * 5);
-    let cpuSelection = options[cpuIndex]
-    changeImage(cpuImage, cpuSelection);
-
-    checkAnswer(userSelection, cpuSelection);
+    countdown(userSelection);
 };
 
 
 /**
  * Create function to run countdown procedure.
  */
-function countdown() {
+function countdown(userSelection) {
     activeTitle.classList.add('active-title');
-    setTimeout(tick, 300);
+    setTimeout(() => tick(userSelection), 300);
 }
 
 /**
  * Function loops through each object in title and changes text color for interval.
  */
-function tick() {
+function tick(userSelection) {
     activeTitle.classList.remove('active-title');
 	titleIndex += 1;
 
 	if (titleIndex < 5) {
         activeTitle = document.getElementById(`title-${options[titleIndex]}`);
         activeTitle.classList.add('active-title');
-		setTimeout(tick, 300);
+		setTimeout(() => tick(userSelection), 300);
 	}
+    
+    if (titleIndex === 5) {
+        // Change image in user area
+        changeImage(userImage, userSelection);
+        // Assign random cpu selection and change image
+        let cpuIndex = Math.floor(Math.random() * 5);
+        let cpuSelection = options[cpuIndex]
+        changeImage(cpuImage, cpuSelection);
+        checkAnswer(userSelection, cpuSelection);
+    }
 }
 
 
