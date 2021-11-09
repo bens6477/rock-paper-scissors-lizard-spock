@@ -90,10 +90,11 @@ function checkAnswer(userSelection, cpuSelection) {
                 currentResult.innerHTML = `You win!<br>${userSelection} beats ${cpuSelection}.`;
                 incrementScore('user');
             } else if (cpuSelection === cases[i][2] || cpuSelection === cases[i][3]) {
-                currentResult.innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`
+                currentResult.innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`;
                 incrementScore('cpu');
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
+                currentResult.innerHTML = "It's a draw!";
                 incrementScore('nobody');
             } else {
                 console.log("Whoops! Try another option.");
@@ -111,11 +112,17 @@ function checkAnswer(userSelection, cpuSelection) {
     if (winner === 'user') {
         console.log(`${winner} wins.`);
         ++userScore.innerHTML;
+        userScore.style.color = 'green'
+        cpuScore.style.color = 'red'
     } else if (winner === 'cpu') {
         console.log(`${winner} wins.`);
         ++cpuScore.innerHTML;
+        userScore.style.color = 'red'
+        cpuScore.style.color = 'green'
     } else if (winner === 'nobody') {
         console.log(`${winner} wins.`);
+        userScore.style.color = 'black'
+        cpuScore.style.color = 'black'
     } else {
         console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
@@ -158,6 +165,8 @@ function reviewScores() {
  */
 function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
+    userScore.style.color = 'black'
+    cpuScore.style.color = 'black'
     rulesArea.classList.add('hide');
     reviewArea.classList.add('hide');
     matchArea.classList.remove('hide');
