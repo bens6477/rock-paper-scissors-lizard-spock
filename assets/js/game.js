@@ -62,8 +62,8 @@ function countdown(userSelection) {
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex];
-        changeImage(userImage, userSelection);
-        changeImage(cpuImage, cpuSelection);
+        changeImage(userImage, userSelection, 'png');
+        changeImage(cpuImage, cpuSelection, 'png');
         checkAnswer(userSelection, cpuSelection);
     }
 }
@@ -72,8 +72,8 @@ function countdown(userSelection) {
 /**
  * Changes the player's image depending on selection.
  */
-function changeImage(playerImage, selection) {
-    playerImage.src = `assets/images/${selection}.png`;
+function changeImage(playerImage, selection, format) {
+    playerImage.src = `assets/images/${selection}.${format}`;
 }
 
 
@@ -128,6 +128,8 @@ function checkAnswer(userSelection, cpuSelection) {
         alert("Error! No winner was determined.");
     }
 
+    imageReset();
+
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
         Swal.fire({
@@ -147,6 +149,14 @@ function checkAnswer(userSelection, cpuSelection) {
         })
         reviewScores();
     }    
+}
+
+/**
+ * Resets images to selection image after interval.
+ */
+function imageReset() {
+    setTimeout(() => changeImage(userImage, 'selection', 'jpg'), 2000);
+    setTimeout(() => changeImage(cpuImage, 'selection', 'jpg'), 2000);
 }
 
 /**
