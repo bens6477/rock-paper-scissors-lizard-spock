@@ -63,6 +63,7 @@
 
 .player-area {
     width: 40%;
+    padding: 1rem;
 }
 
 .central-area {
@@ -146,12 +147,12 @@
 
 #scissors-button {
     top: 77%;
-    left: 32%;
+    left: 69%;
 }
 
 #lizard-button {
     top: 77%;
-    left: 69%;
+    left: 32%;
 }
 
 #spock-button {
