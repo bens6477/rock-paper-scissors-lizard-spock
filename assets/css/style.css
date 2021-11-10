@@ -228,8 +228,9 @@
 }
 
 @media screen and (max-width: 400px) {
-    .title-area h1, #rules-area h2 {
+    .title-area h1, .games-area h2, #current-result {
         font-size: 1rem;
+        padding: 0;
     }
 
     #rules {
@@ -237,7 +238,19 @@
         font-size: 0.8rem;
     }
 
+    .btn {
+        font-size: 0.8rem;
+    }
+
+    .player-area{
+        padding: 0;
+    }
+
     .image-container {
         width: 50%;
+    }
+
+    #score-area {
+        font-size: 1.5rem;
     }
 }
