@@ -106,7 +106,7 @@ function checkAnswer(userSelection, cpuSelection) {
                 incrementScore('cpu');
             } else if (cpuSelection === cases[i][4]) {
                 console.log("It's a draw!");
-                currentResult.innerHTML = "It's a draw!";
+                currentResult.innerHTML = `It's a draw!<br>Have another try.`;
                 incrementScore('nobody');
             } else {
                 console.log("Whoops! Try another option.");
