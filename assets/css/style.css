@@ -169,11 +169,10 @@
     color: #ff0000;
 }
 
-/* add class to hide sections upon request */
-.hide {
+/* add class to hide elements upon request */
+.hide, .hide-center {
     display: none;
 }
-
 
 /* add media queries for responsive deisgn */
 @media screen and (max-width: 950px) {
@@ -252,5 +251,10 @@
 
     #score-area {
         font-size: 1.5rem;
+    }
+
+    .hide-center {
+        display: initial;
+        visibility: hidden;
     }
 }

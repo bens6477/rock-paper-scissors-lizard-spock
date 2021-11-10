@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
  * Main game function.
  */
 function runGame(userSelection) {
-    scoreArea.classList.add('hide');
-    resultsArea.classList.add('hide');
-    countdownArea.classList.remove('hide');
+    scoreArea.classList.add('hide-center');
+    resultsArea.classList.add('hide-center');
+    countdownArea.classList.remove('hide-center');
     titleIndex = 0;
     activeTitle = document.getElementById(`title-${options[titleIndex]}`);
     activeTitle.classList.add('active-title');
@@ -70,9 +70,9 @@ function countdown(userSelection) {
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex];
-        scoreArea.classList.remove('hide');
-        resultsArea.classList.remove('hide');
-        countdownArea.classList.add('hide');
+        scoreArea.classList.remove('hide-center');
+        resultsArea.classList.remove('hide-center');
+        countdownArea.classList.add('hide-center');
         changeImage(userImage, userSelection, 'png');
         changeImage(cpuImage, cpuSelection, 'png');
         checkAnswer(userSelection, cpuSelection);
