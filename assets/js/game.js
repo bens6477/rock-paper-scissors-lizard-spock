@@ -192,7 +192,7 @@ function reviewScores() {
  */
 function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
-    currentResult.innerHTML = "";
+    currentResult.innerHTML = "Let's Play!<br>Choose your attack.";
     userScore.style.color = 'black'
     cpuScore.style.color = 'black'
     currentResult.style.color = 'black'
