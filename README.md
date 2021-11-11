@@ -35,11 +35,12 @@
 
 
 ## Features
-
+### Integrated Attack Selection
+The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks. 
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
-* The addition of... 
+* The addition of two players wou
 
 
 ## Technology Used
@@ -69,9 +70,9 @@ Various additional features would bring a greater user experience to the website
 
 ### Validator Testing
 #### HTML
-* No errors were found when running the html code through the [official W3C validator](https://validator.w3.org/)
+* No errors were found when running the html code through the [official W3C validator](https://validator.w3.org/).
 #### CSS
-* No errors were found when running the css code through the [official W3C Jigsaw validator](https://jigsaw.w3.org/css-validator/)
+* No errors were found when running the css code through the [official W3C Jigsaw validator](https://jigsaw.w3.org/css-validator/).
 #### Accessibility
 * The website was tested using the Lighthouse function in Chrome DevTools, showing a accessibility level of 100%.
     
@@ -89,12 +90,18 @@ Various additional features would bring a greater user experience to the website
     * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop.
     https://sweetalert2.github.io/
 
-* **Issue** - 
+* **Issue** - Embedding selection buttons within the attack options in the image.
+    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. 
+    https://stackoverflow.com/questions/24435397/click-particular-region-of-image
+
+* **Issue** - Creating a countdown feature before the result was revealed.
+    * **Resolution** - 
+
+* **Issue** - Asynchronous flow
     * **Resolution** - 
 
 * **Issue** - 
     * **Resolution** - 
-
 
 ### Unfixed Bugs
 There are no known bugs left unfixed.
