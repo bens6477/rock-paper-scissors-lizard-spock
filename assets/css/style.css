@@ -28,6 +28,20 @@
     padding: 0.5rem 0;
 }
 
+/* style footer */
+footer {
+    margin: 0.25rem;
+}
+
+.icon {
+    display: inline;
+}
+
+footer a {
+    color: #1b1d4e;
+    font-size: 1rem;
+}
+
 /* style and position game area sections */
 .games-area {
     width: 80%;
@@ -115,6 +129,15 @@
     padding: 0.5rem;
     margin: 0.5rem;
     font-size: 1rem;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background-color: #1b1d4e;
+}
+
+.btn-small {
+    padding: 0.3rem;
+    margin: 0 0.5rem;
+    font-size: 0.5rem;
     border-radius: 0.25rem;
     color: #ffffff;
     background-color: #1b1d4e;
