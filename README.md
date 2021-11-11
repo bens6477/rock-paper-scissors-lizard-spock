@@ -77,8 +77,24 @@ Various additional features would bring a greater user experience to the website
     
 
 ### Bugs
+* **Issue** - Dynamically hiding elements from view during gameplay.
+    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the score, result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html.
+    https://careerkarma.com/blog/css-hide-element/
+
+* **Issue** - Functions running immediately when assigning event listeners.
+    * **Resolution** - The syntax of the listener was assigned to <code>() => functionName(variable))</code> instead of simply <code>functionName(variable)</code>. If no variables were passed into the function, passing only <code>functionName</code> prevented the immediate running of the function.
+    https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to
+
+* **Issue** - Alerts disturbing the flow of events.
+    * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop.
+    https://sweetalert2.github.io/
+
 * **Issue** - 
     * **Resolution** - 
+
+* **Issue** - 
+    * **Resolution** - 
+
 
 ### Unfixed Bugs
 There are no known bugs left unfixed.
