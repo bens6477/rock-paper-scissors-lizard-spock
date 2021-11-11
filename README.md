@@ -35,12 +35,23 @@
 
 
 ## Features
+
+### Instruction Page
+
+### Game Area
+
 ### Integrated Attack Selection
-The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks. 
+The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
+
+### Countdown
+
+
+### Game Review
+
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
-* The addition of two players wou
+* The addition of a two-player game, where two users can play against each other.
 
 
 ## Technology Used
@@ -94,8 +105,8 @@ Various additional features would bring a greater user experience to the website
     * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. 
     https://stackoverflow.com/questions/24435397/click-particular-region-of-image
 
-* **Issue** - Creating a countdown feature before the result was revealed.
-    * **Resolution** - 
+* **Issue** - Creating a countdown feature before revealing the result.
+    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete. 
 
 * **Issue** - Asynchronous flow
     * **Resolution** - 
