@@ -29,7 +29,7 @@
     </section>
 
     <!-- add content to rules area -->
-    <section id="rules-area" class="games-area">
+    <section id="rules-area" class="games-area hide">
         <h2>Instructions</h2>
         <div id="rules-image-container" class="rules-image-container">
             <img id="rules-image" src="assets/images/selection.jpg" alt="Rock Paper Scissors Lizard Spock">    
@@ -89,11 +89,13 @@
     </div>
 
     <!-- add content to review area -->
-    <section id="review-area" class="games-area hide">
-        <h2>Results</h2>
-        <span id="user-score-review"></span> - <span id="cpu-score-review"></span>
-        <br class="clear">
-        <button data-type="play-game" class="btn">Play Again</button>
+    <section id="review-area" class="games-area">
+        <div id="review-inner">
+            <h2>Results</h2>
+            <span id="user-score-review"></span> - <span id="cpu-score-review"></span>
+            <br class="clear">
+            <button data-type="play-game" class="btn">Play Again</button>
+        </div>
     </section>
     
     <!-- link to the JavaScript code -->

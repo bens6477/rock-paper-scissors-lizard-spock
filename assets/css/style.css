@@ -35,8 +35,15 @@
     position: relative;
 }
 
-#rules-area {
+#rules-area, #review-area {
     width: 50%;
+}
+
+#review-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #rules {
@@ -57,6 +64,7 @@
 #user-area {
     float: left;
 }
+
 #cpu-area {
     float: right;
 }
