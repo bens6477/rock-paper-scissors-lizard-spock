@@ -33,10 +33,31 @@ document.addEventListener("DOMContentLoaded", function() {
                 resetBoard();
             } else {
                 let userSelection = button.getAttribute("data-type");
-                runGame(userSelection)
+                runGame(userSelection);
             }
         });
     }
+
+    // Enable answer to be submitted using 1-5 keys on keyboard
+    document.addEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "1":
+                runGame("rock");
+                break;
+            case "2":
+                runGame("paper");
+                break;
+            case "3":
+                runGame("scissors");
+                break;
+            case "4":
+                runGame("lizard");
+                break;
+            case "5":
+                runGame("spock");
+                break;
+        }
+    })
 })
 
 

@@ -106,7 +106,8 @@ Various additional features would bring a greater user experience to the website
     https://stackoverflow.com/questions/24435397/click-particular-region-of-image
 
 * **Issue** - Creating a countdown feature before revealing the result.
-    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete. 
+    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete.
+    https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/ 
 
 * **Issue** - Asynchronous flow
     * **Resolution** - 
