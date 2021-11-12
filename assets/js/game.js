@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Enable answer to be submitted using 1-5 keys on keyboard
+    // Enable keyboard shortcuts
     document.addEventListener("keydown", function(event) {
         switch (event.key) {
             case "1":
@@ -168,8 +168,6 @@ function checkAnswer(userSelection, cpuSelection) {
         alert("Error! No winner was determined.");
     }
 
-    imageReset();
-
     if (userScore.innerHTML === '10') {
         console.log("Congratulations! You've won the match!");
         Swal.fire({
@@ -188,7 +186,9 @@ function checkAnswer(userSelection, cpuSelection) {
             timer: 1500
         })
         reviewScores();
-    }    
+    } else {
+        imageReset();
+    }
 }
 
 /**
@@ -211,6 +211,21 @@ function reviewScores() {
     matchArea.classList.add('hide');
     reviewArea.classList.remove('hide');
 }
+
+function reviewGame(victor) {
+    console.log('reviewing game');
+    victor = 'user';
+    if (victor === 'user') {
+        changeImage(userImage, 'spock', 'png');
+        changeImage(cpuImage, 'spock', 'png');
+        currentResult.innerHTML = `Congratulations!<br>You've won the match!`;
+    } else {
+        changeImage(userImage, 'lizard', 'png');
+        changeImage(cpuImage, 'lizard', 'png');
+        currentResult.innerHTML = `Unlucky!<br>You've lost the match!`;
+    }
+}
+
 
 /**
  * Reset score to 0 after a player wins.
