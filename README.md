@@ -132,3 +132,6 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 
 ### Media
+
+
+<a href='https://www.freepik.com/vectors/business'>Business vector created by rawpixel.com - www.freepik.com</a>

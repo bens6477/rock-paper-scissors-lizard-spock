@@ -216,12 +216,12 @@ function reviewGame(victor) {
     console.log('reviewing game');
     victor = 'user';
     if (victor === 'user') {
-        changeImage(userImage, 'spock', 'png');
-        changeImage(cpuImage, 'spock', 'png');
+        changeImage(userImage, 'winner', 'jpg');
+        changeImage(cpuImage, 'loser', 'png');
         currentResult.innerHTML = `Congratulations!<br>You've won the match!`;
     } else {
-        changeImage(userImage, 'lizard', 'png');
-        changeImage(cpuImage, 'lizard', 'png');
+        changeImage(userImage, 'loser', 'png');
+        changeImage(cpuImage, 'winner', 'jpg');
         currentResult.innerHTML = `Unlucky!<br>You've lost the match!`;
     }
 }
