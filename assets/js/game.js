@@ -26,16 +26,15 @@ let cpuScore = document.getElementById('cpu-score');
 
 
 // Run game after DOM has finished loading, listening for button clicks.
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", listeners);
+
+
+/**
+ * Listen for key gameplay events
+ */
+function listeners() {
     for (let button of buttons) {
-        button.addEventListener('click', function() {
-            if (button.getAttribute('data-type') === 'play-game') {
-                resetBoard();
-            } else {
-                let userSelection = button.getAttribute("data-type");
-                runGame(userSelection);
-            }
-        });
+        button.addEventListener('click', () => buttonEvents(button)); // TEST CODE (buttonEvents function)
     }
 
     // Enable keyboard shortcuts
@@ -68,13 +67,64 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
         }
     })
-})
+}
+
+ // TEST CODE
+function removeListeners() { // TEST CODE
+    for (let button of buttons) {
+        button.removeEventListener('click', () => buttonEvents(button));
+    }
+
+    // Enable keyboard shortcuts
+    document.removeEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "1":
+                runGame("rock");
+                break;
+            case "2":
+                runGame("paper");
+                break;
+            case "3":
+                runGame("scissors");
+                break;
+            case "4":
+                runGame("lizard");
+                break;
+            case "5":
+                runGame("spock");
+                break;
+            case "i":
+                rulesArea.classList.remove('hide');
+                reviewArea.classList.add('hide');
+                matchArea.classList.add('hide');
+                break;
+            case "9":
+                console.log('9 pressed');
+                userScore.innerHTML = '9';
+                cpuScore.innerHTML = '9';
+                break;
+        }
+    })
+}
+
+ // TEST CODE
+function buttonEvents(button) { // TEST CODE
+    if (button.getAttribute('data-type') === 'play-game') {
+        resetBoard();
+
+    } else {
+        let userSelection = button.getAttribute("data-type");
+        runGame(userSelection);
+    }
+}
 
 
 /**
  * Main game function.
  */
 function runGame(userSelection) {
+    removeListeners(); // TEST CODE
+    console.log('removing listeners') // TEST CODE
     scoreArea.classList.add('hide-center');
     resultsArea.classList.add('hide-center');
     countdownArea.classList.remove('hide-center');
@@ -211,7 +261,6 @@ function imageReset() {
  * Receives the victor and displays the final result
  */
 function declareWinner(victor) {
-    console.log('reviewing game');
     victor = 'user';
     if (victor === 'user') {
         changeImage(userImage, 'winner', 'jpg');
