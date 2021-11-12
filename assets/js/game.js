@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 rulesArea.classList.remove('hide');
                 reviewArea.classList.add('hide');
                 matchArea.classList.add('hide');
+                break;
+            case "9":
+                console.log('9 pressed');
+                userScore.innerHTML = '9';
+                cpuScore.innerHTML = '9';
+                break;
         }
     })
 })
@@ -176,7 +182,7 @@ function checkAnswer(userSelection, cpuSelection) {
             icon: 'success',
             timer: 1500
         })
-        reviewScores();
+        declareWinner('user');
     } else if (cpuScore.innerHTML === '10') {
         console.log("Unlucky! You've lost the match!");
         Swal.fire({
@@ -185,7 +191,7 @@ function checkAnswer(userSelection, cpuSelection) {
             icon: 'error',
             timer: 1500
         })
-        reviewScores();
+        declareWinner('cpu');
     } else {
         imageReset();
     }
@@ -212,7 +218,7 @@ function reviewScores() {
     reviewArea.classList.remove('hide');
 }
 
-function reviewGame(victor) {
+function declareWinner(victor) {
     console.log('reviewing game');
     victor = 'user';
     if (victor === 'user') {
