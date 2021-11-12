@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
             case "5":
                 runGame("spock");
                 break;
+            case "i":
+                rulesArea.classList.remove('hide');
+                reviewArea.classList.add('hide');
+                matchArea.classList.add('hide');
         }
     })
 })
