@@ -107,7 +107,6 @@ function countdown(userSelection) {
         changeImage(userImage, userSelection, 'png');
         changeImage(cpuImage, cpuSelection, 'png');
         checkAnswer(userSelection, cpuSelection);
-        
     }
 }
 
@@ -207,17 +206,10 @@ function imageReset() {
     }, 2000);
 }
 
-/**
- * Switches UI to review area to summarise the match score.
- */
-function reviewScores() {
-    console.log('reviewing scores');
-    userScoreReview.innerHTML = userScore.innerHTML;
-    cpuScoreReview.innerHTML = cpuScore.innerHTML;
-    matchArea.classList.add('hide');
-    reviewArea.classList.remove('hide');
-}
 
+/**
+ * Receives the victor and displays the final result
+ */
 function declareWinner(victor) {
     console.log('reviewing game');
     victor = 'user';
