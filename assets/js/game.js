@@ -80,23 +80,17 @@ function buttonEvents(button) { // TEST CODE
     }
 }
 
-// TEST CODE
-function alertButtonEvents(button) { // TEST CODE
-    if (button.getAttribute('data-type') === 'play-game') {
-        resetBoard();
-        alert('play again pressed');
-    } else {
-        alert('selector button pressed');
-    }
-}
-
 
 /**
  * Main game function.
  */
 function runGame(userSelection) {
     if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
-        alert('Please reset game');
+        Swal.fire({
+            title: 'Oops!',
+            text: "The match has finished! Press Reset to play again.",
+            icon: 'error',
+        })
     } else {
         scoreArea.classList.add('hide-center');
         resultsArea.classList.add('hide-center');
@@ -105,7 +99,8 @@ function runGame(userSelection) {
         activeTitle = document.getElementById(`title-${options[titleIndex]}`);
         activeTitle.classList.add('active-title');
         countdownArea.innerHTML = options[titleIndex];
-        setTimeout(() => countdown(userSelection), 300);    }
+        setTimeout(() => countdown(userSelection), 300);
+    }
 }
 
 
@@ -202,7 +197,6 @@ function checkAnswer(userSelection, cpuSelection) {
             title: 'Well Done!',
             text: "Congratulations! You've won the match!",
             icon: 'success',
-            timer: 1500
         })
         declareWinner('user');
     } else if (cpuScore.innerHTML === '10') {
@@ -211,7 +205,6 @@ function checkAnswer(userSelection, cpuSelection) {
             title: 'Unlucky!',
             text: "You've lost the match! Better luck next time!",
             icon: 'error',
-            timer: 1500
         })
         declareWinner('cpu');
     } else {

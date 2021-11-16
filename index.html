@@ -11,7 +11,8 @@
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     
     <!-- link to SweetAlert -->
-    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css"></body>
+
     <title>Rock, Paper, Scissors,Lizard, Spock</title>
 </head>
 <body>
@@ -45,7 +46,7 @@
     </section>
 
     <!-- add content to games area -->
-    <div id="match-area" class="games-area hide">
+    <div id="match-area" class="games-area">
         <!-- create computer's selection area -->
         <div id="cpu-area" class="player-area">
             <div>
@@ -89,7 +90,7 @@
     </div>
 
     <!-- add content to review area -->
-    <section id="review-area" class="games-area">
+    <section id="review-area" class="games-area hide">
         <div id="review-inner">
             <h2>Results</h2>
             <span id="user-score-review"></span> - <span id="cpu-score-review"></span>
@@ -109,6 +110,6 @@
     <!-- link to the game JavaScript, FontAwesome and sweetalert2 -->
     <script src="assets/js/game.js"></script>
     <script src="https://kit.fontawesome.com/45c64c2e27.js" crossorigin="anonymous"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-</body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
 </html>
