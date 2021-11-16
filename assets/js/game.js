@@ -1,7 +1,6 @@
 // Declare constants and variables
 const rulesArea = document.getElementById('rules-area');
 const matchArea = document.getElementById('match-area');
-const reviewArea = document.getElementById('review-area');
 const scoreArea = document.getElementById('score-area');
 const resultsArea = document.getElementById('results-area');
 const countdownArea = document.getElementById('countdown-area');
@@ -16,8 +15,6 @@ const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
 const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
 const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
 const currentResult = document.getElementById('current-result');
-const userScoreReview = document.getElementById('user-score-review');
-const cpuScoreReview = document.getElementById('cpu-score-review');
 
 let titleIndex = 0;
 let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
@@ -122,7 +119,9 @@ function runGame(userSelection) {
     }
 }
 
-
+/**
+ * Moves location of CPU score bar when in vertically stacked orientation
+ */
 function stackScore() {
     if (verticalThreshold.matches) {
         console.log('Small Screen');
@@ -286,6 +285,5 @@ function resetBoard() {
     changeImage(userImage, 'selection', 'jpg');
     changeImage(cpuImage, 'selection', 'jpg');
     rulesArea.classList.add('hide');
-    reviewArea.classList.add('hide');
     matchArea.classList.remove('hide');
 }
