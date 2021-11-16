@@ -194,6 +194,7 @@ footer a {
     display: none;
 }
 
+
 /* add media queries for responsive deisgn */
 @media screen and (max-width: 950px) {
     .title-area h1 {

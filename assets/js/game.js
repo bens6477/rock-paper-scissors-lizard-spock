@@ -21,10 +21,14 @@ const cpuScoreReview = document.getElementById('cpu-score-review');
 
 let titleIndex = 0;
 let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-let userScore = document.getElementById('user-score');
-let cpuScore = document.getElementById('cpu-score');
+let userScore = document.getElementById('user-score-vertical');
+let cpuScore = document.getElementById('cpu-score-vertical');
 let buttonIncomplete;
 
+let verticalThreshold = window.matchMedia("(max-width: 800px)");
+let cpuBar = document.getElementById('cpu-bar');
+let cpuImageContainer = document.getElementById('cpu-image-container');
+let container = cpuImageContainer.parentNode;
 
 // Run game after DOM has finished loading, listening for button clicks.
 document.addEventListener("DOMContentLoaded", listeners);
@@ -34,6 +38,8 @@ document.addEventListener("DOMContentLoaded", listeners);
  * Listen for key gameplay events
  */
 function listeners() {
+    verticalThreshold.addEventListener('change', stackScore);
+
     for (let button of buttons) {
         button.addEventListener('click', () => buttonEvents(button)); // TEST CODE (buttonEvents function)
     }
@@ -113,6 +119,19 @@ function runGame(userSelection) {
             countdownArea.innerHTML = options[titleIndex];
             setTimeout(() => countdown(userSelection), 300);
         }
+    }
+}
+
+
+function stackScore() {
+    if (verticalThreshold.matches) {
+        console.log('Small Screen');
+        container.appendChild(cpuImageContainer);
+        container.appendChild(cpuBar);
+    } else {
+        console.log('Large Screen');
+        container.appendChild(cpuBar);
+        container.appendChild(cpuImageContainer);
     }
 }
 
