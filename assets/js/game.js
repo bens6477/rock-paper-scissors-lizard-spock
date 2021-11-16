@@ -69,45 +69,8 @@ function listeners() {
     })
 }
 
- // TEST CODE
-function removeListeners() { // TEST CODE
-    for (let button of buttons) {
-        button.removeEventListener('click', () => buttonEvents(button));
-    }
 
-    // Enable keyboard shortcuts
-    document.removeEventListener("keydown", function(event) {
-        switch (event.key) {
-            case "1":
-                runGame("rock");
-                break;
-            case "2":
-                runGame("paper");
-                break;
-            case "3":
-                runGame("scissors");
-                break;
-            case "4":
-                runGame("lizard");
-                break;
-            case "5":
-                runGame("spock");
-                break;
-            case "i":
-                rulesArea.classList.remove('hide');
-                reviewArea.classList.add('hide');
-                matchArea.classList.add('hide');
-                break;
-            case "9":
-                console.log('9 pressed');
-                userScore.innerHTML = '9';
-                cpuScore.innerHTML = '9';
-                break;
-        }
-    })
-}
-
- // TEST CODE
+// TEST CODE
 function buttonEvents(button) { // TEST CODE
     if (button.getAttribute('data-type') === 'play-game') {
         resetBoard();
@@ -123,8 +86,6 @@ function buttonEvents(button) { // TEST CODE
  * Main game function.
  */
 function runGame(userSelection) {
-    removeListeners(); // TEST CODE
-    console.log('removing listeners') // TEST CODE
     scoreArea.classList.add('hide-center');
     resultsArea.classList.add('hide-center');
     countdownArea.classList.remove('hide-center');
@@ -243,6 +204,7 @@ function checkAnswer(userSelection, cpuSelection) {
         declareWinner('cpu');
     } else {
         imageReset();
+
     }
 }
 
@@ -265,11 +227,11 @@ function declareWinner(victor) {
     if (victor === 'user') {
         changeImage(userImage, 'winner', 'jpg');
         changeImage(cpuImage, 'loser', 'png');
-        currentResult.innerHTML = `Congratulations!<br>You've won the match!`;
+        currentResult.innerHTML = `Well Done! You Win!<br>Click reset to play again!`;
     } else {
         changeImage(userImage, 'loser', 'png');
         changeImage(cpuImage, 'winner', 'jpg');
-        currentResult.innerHTML = `Unlucky!<br>You've lost the match!`;
+        currentResult.innerHTML = `Unlucky! You Lose.<br>Click reset to play again.`;
     }
 }
 
@@ -283,6 +245,8 @@ function resetBoard() {
     userScore.style.color = 'black'
     cpuScore.style.color = 'black'
     currentResult.style.color = 'black'
+    changeImage(userImage, 'selection', 'jpg');
+    changeImage(cpuImage, 'selection', 'jpg');
     rulesArea.classList.add('hide');
     reviewArea.classList.add('hide');
     matchArea.classList.remove('hide');
