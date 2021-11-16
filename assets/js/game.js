@@ -59,6 +59,9 @@ function listeners() {
                 rulesArea.classList.remove('hide');
                 matchArea.classList.add('hide');
                 break;
+            case "r":
+                resetBoard();
+                break;
             case "9":
                 console.log('9 pressed');
                 userScore.innerHTML = '9';
