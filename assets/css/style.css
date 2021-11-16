@@ -34,7 +34,7 @@ footer {
 }
 
 footer a {
-    color: white;
+    text-decoration: none;
 }
 
 /* style and position game area sections */
@@ -147,6 +147,7 @@ footer a {
     width: 30%;
     height: 30%;
     border-radius: 50%;
+    /* add opacity: 0; when submitting */
     background-color: rgba(255, 0, 0, 0.5);
 }
 
