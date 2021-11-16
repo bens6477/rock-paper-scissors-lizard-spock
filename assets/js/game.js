@@ -74,10 +74,19 @@ function listeners() {
 function buttonEvents(button) { // TEST CODE
     if (button.getAttribute('data-type') === 'play-game') {
         resetBoard();
-
     } else {
         let userSelection = button.getAttribute("data-type");
         runGame(userSelection);
+    }
+}
+
+// TEST CODE
+function alertButtonEvents(button) { // TEST CODE
+    if (button.getAttribute('data-type') === 'play-game') {
+        resetBoard();
+        alert('play again pressed');
+    } else {
+        alert('selector button pressed');
     }
 }
 
@@ -86,15 +95,18 @@ function buttonEvents(button) { // TEST CODE
  * Main game function.
  */
 function runGame(userSelection) {
-    scoreArea.classList.add('hide-center');
-    resultsArea.classList.add('hide-center');
-    countdownArea.classList.remove('hide-center');
-    titleIndex = 0;
-    activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-    activeTitle.classList.add('active-title');
-    countdownArea.innerHTML = options[titleIndex];
-    setTimeout(() => countdown(userSelection), 300);
-};
+    if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
+        alert('Please reset game');
+    } else {
+        scoreArea.classList.add('hide-center');
+        resultsArea.classList.add('hide-center');
+        countdownArea.classList.remove('hide-center');
+        titleIndex = 0;
+        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+        activeTitle.classList.add('active-title');
+        countdownArea.innerHTML = options[titleIndex];
+        setTimeout(() => countdown(userSelection), 300);    }
+}
 
 
 /**
