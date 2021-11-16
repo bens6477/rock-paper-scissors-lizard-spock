@@ -25,7 +25,7 @@
 }
 
 .title-area h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding: 0.5rem 0;
 }
 
@@ -46,7 +46,17 @@ footer a {
 }
 
 #rules-area {
+    width: 60%;
+}
+
+#rules-area h2 {
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+#rules-image-container {
     width: 50%;
+    margin: 0 auto;
 }
 
 #rules {
@@ -99,8 +109,8 @@ footer a {
 
 /* style images */
 .rules-image-container img {
-    width: 60%;
-    margin: 1rem;
+    width: 100%;
+    /* margin: 1rem; */
 }
 
 .image-container {
@@ -203,6 +213,14 @@ footer a {
 @media screen and (max-width: 800px) {
     .title-area h1 {
         font-size: 1.5rem;
+    }
+
+    #rules-image-container {
+        width: 40%;
+    }
+
+    #rules ol {
+        font-size: 0.8rem;
     }
 
     .games-area, #rules-area {
