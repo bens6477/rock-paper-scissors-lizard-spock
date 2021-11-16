@@ -15,6 +15,7 @@
 /* style .clear class to clear floats */
 .clear {
     clear: both;
+    line-height: 0;
 }
 
 
@@ -80,28 +81,19 @@ footer a {
     width: 20%;
 }
 
-#score-area {
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-}
-
-#results-area {
-    position: absolute;
-    left: 50%;
-    top: 70%;
-    transform: translate(-50%, -50%);
-    font-size: 1rem;
-    width: 20%;
-}
-
-#countdown-area {
+#results-area, #countdown-area {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+
+#results-area {
+    font-size: 1.5rem;
+    width: 20%;
+}
+
+#countdown-area {
     font-size: 2rem;
 }
 
@@ -202,8 +194,8 @@ footer a {
         padding: 1rem 0;
     }
 
-    #score-area {
-        font-size: 1.75rem;
+    #results-area {
+        font-size: 1rem;
     }
 }
 
@@ -220,27 +212,16 @@ footer a {
     .central-area {
         display: block;
         width: 100%;
-        margin-bottom: -2rem;
+        height: 3rem;
+        position: relative;
     }
 
-    #score-area, #results-area, #countdown-area {
-        position: initial;
-        left: 0;
-        top: 0;
-        transform: translate(0, 0);
+    #results-area {
         width: 100%;
     }
 
-    #score-area {
-        font-size: 2rem;
-    }
-
-    #score-title {
-        display: none;
-    }
-
-    #countdown-area {
-        margin: -2rem 0 2rem 0;
+    .player-area{
+        padding: 0;
     }
 
     #user-area, #cpu-area {
@@ -275,10 +256,6 @@ footer a {
 
     .btn {
         font-size: 0.8rem;
-    }
-
-    .player-area{
-        padding: 0;
     }
 
     .image-container {
