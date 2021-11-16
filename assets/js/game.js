@@ -1,7 +1,6 @@
 // Declare constants and variables
 const rulesArea = document.getElementById('rules-area');
 const matchArea = document.getElementById('match-area');
-const scoreArea = document.getElementById('score-area');
 const resultsArea = document.getElementById('results-area');
 const countdownArea = document.getElementById('countdown-area');
 const buttons = document.getElementsByTagName('button');
@@ -107,7 +106,6 @@ function runGame(userSelection) {
             })
         } else {
             buttonIncomplete = true;
-            scoreArea.classList.add('hide-center');
             resultsArea.classList.add('hide-center');
             countdownArea.classList.remove('hide-center');
             titleIndex = 0;
@@ -150,7 +148,6 @@ function countdown(userSelection) {
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex];
-        scoreArea.classList.remove('hide-center');
         resultsArea.classList.remove('hide-center');
         countdownArea.classList.add('hide-center');
         changeImage(userImage, userSelection, 'png');
