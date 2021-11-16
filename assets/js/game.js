@@ -57,7 +57,6 @@ function listeners() {
                 break;
             case "i":
                 rulesArea.classList.remove('hide');
-                reviewArea.classList.add('hide');
                 matchArea.classList.add('hide');
                 break;
             case "9":
@@ -74,6 +73,12 @@ function listeners() {
 function buttonEvents(button) { // TEST CODE
     if (button.getAttribute('data-type') === 'play-game') {
         resetBoard();
+    } else if (button.getAttribute('data-type') === 'resume') {
+        rulesArea.classList.add('hide');
+        matchArea.classList.remove('hide');
+    } else if (button.getAttribute('data-type') === 'rules') {
+        rulesArea.classList.remove('hide');
+        matchArea.classList.add('hide');
     } else {
         let userSelection = button.getAttribute("data-type");
         runGame(userSelection);
