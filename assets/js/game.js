@@ -23,6 +23,7 @@ let titleIndex = 0;
 let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 let userScore = document.getElementById('user-score');
 let cpuScore = document.getElementById('cpu-score');
+let buttonIncomplete;
 
 
 // Run game after DOM has finished loading, listening for button clicks.
@@ -93,21 +94,27 @@ function buttonEvents(button) { // TEST CODE
  * Main game function.
  */
 function runGame(userSelection) {
-    if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
-        Swal.fire({
-            title: 'Oops!',
-            text: "The match has finished! Press Reset to play again.",
-            icon: 'error',
-        })
+    if (buttonIncomplete) {
+        console.log('button already pressed');
+        alert('button already pressed');
     } else {
-        scoreArea.classList.add('hide-center');
-        resultsArea.classList.add('hide-center');
-        countdownArea.classList.remove('hide-center');
-        titleIndex = 0;
-        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-        activeTitle.classList.add('active-title');
-        countdownArea.innerHTML = options[titleIndex];
-        setTimeout(() => countdown(userSelection), 300);
+        if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
+            Swal.fire({
+                title: 'Oops!',
+                text: "The match has finished! Press Reset to play again.",
+                icon: 'error',
+            })
+        } else {
+            buttonIncomplete = true;
+            scoreArea.classList.add('hide-center');
+            resultsArea.classList.add('hide-center');
+            countdownArea.classList.remove('hide-center');
+            titleIndex = 0;
+            activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+            activeTitle.classList.add('active-title');
+            countdownArea.innerHTML = options[titleIndex];
+            setTimeout(() => countdown(userSelection), 300);
+        }
     }
 }
 
@@ -217,7 +224,6 @@ function checkAnswer(userSelection, cpuSelection) {
         declareWinner('cpu');
     } else {
         imageReset();
-
     }
 }
 
@@ -229,6 +235,7 @@ function imageReset() {
         changeImage(userImage, 'selection', 'jpg');
         changeImage(cpuImage, 'selection', 'jpg');
     }, 2000);
+    buttonIncomplete = false;
 }
 
 
