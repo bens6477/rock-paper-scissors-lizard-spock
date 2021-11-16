@@ -95,13 +95,11 @@ function buttonEvents(button) { // TEST CODE
  */
 function runGame(userSelection) {
     if (buttonIncomplete) {
-        console.log('button already pressed');
-        alert('button already pressed');
     } else {
         if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
             Swal.fire({
                 title: 'Oops!',
-                text: "The match has finished! Press Reset to play again.",
+                text: "The match has finished! Press Reset Game to play again.",
                 icon: 'error',
             })
         } else {
@@ -253,6 +251,7 @@ function declareWinner(victor) {
         changeImage(cpuImage, 'winner', 'jpg');
         currentResult.innerHTML = `Unlucky! You Lose.<br>Click reset to play again.`;
     }
+    buttonIncomplete = false;
 }
 
 
