@@ -1,11 +1,7 @@
 // Declare constants and variables
-const rulesArea = document.getElementById('rules-area');
-const matchArea = document.getElementById('match-area');
-const resultsArea = document.getElementById('results-area');
-const countdownArea = document.getElementById('countdown-area');
-const buttons = document.getElementsByTagName('button');
-const userImage = document.getElementById('user-image');
-const cpuImage = document.getElementById('cpu-image');
+let titleIndex = 0;
+let buttonIncomplete = false;
+
 const options = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 const rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock']; // outcome array: selectionArray = [win, win, lose, lose, draw];
 const paperArray = ['rock', 'spock', 'scissors', 'lizard', 'paper'];
@@ -13,18 +9,22 @@ const scissorsArray = ['paper', 'lizard', 'rock', 'spock', 'scissors'];
 const lizardArray = ['paper', 'spock', 'rock', 'scissors', 'lizard'];
 const spockArray = ['rock', 'scissors', 'paper', 'lizard', 'spock'];
 const cases = [rockArray, paperArray, scissorsArray, lizardArray, spockArray]; // Create matrix (nested array) of all possible cases
+const verticalThreshold = window.matchMedia("(max-width: 800px)");
+const cpuBar = document.getElementById('cpu-bar');
+const cpuImageContainer = document.getElementById('cpu-image-container');
+const container = cpuImageContainer.parentNode;
+const rulesArea = document.getElementById('rules-area');
+const matchArea = document.getElementById('match-area');
+const resultsArea = document.getElementById('results-area');
+const buttons = document.getElementsByTagName('button');
 const currentResult = document.getElementById('current-result');
+const countdownArea = document.getElementById('countdown-area');
+const activeTitle = document.getElementById(`title-${options[titleIndex]}`);
+const userScore = document.getElementById('user-score');
+const cpuScore = document.getElementById('cpu-score');
+const userImage = document.getElementById('user-image');
+const cpuImage = document.getElementById('cpu-image');
 
-let titleIndex = 0;
-let activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-let userScore = document.getElementById('user-score-vertical');
-let cpuScore = document.getElementById('cpu-score-vertical');
-let buttonIncomplete;
-
-let verticalThreshold = window.matchMedia("(max-width: 800px)");
-let cpuBar = document.getElementById('cpu-bar');
-let cpuImageContainer = document.getElementById('cpu-image-container');
-let container = cpuImageContainer.parentNode;
 
 // Run game after DOM has finished loading, listening for button clicks.
 document.addEventListener("DOMContentLoaded", function() {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 let userSelection = button.getAttribute("data-type");
                 runGame(userSelection);
             }
-        }); // TEST CODE (buttonEvents function)
+        });
     }
 
     // Enable keyboard shortcuts
@@ -75,19 +75,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
             // Delete this upon submission ****************************************
             case "9":
-                console.log('9 pressed');
                 userScore.innerHTML = '9';
                 cpuScore.innerHTML = '9';
                 break;
         }
     })
 });
-
-
-// TEST CODE
-function buttonEvents(button) { // TEST CODE
-    
-}
 
 
 /**
@@ -118,11 +111,9 @@ function runGame(userSelection) {
  */
 function stackScore() {
     if (verticalThreshold.matches) {
-        console.log('Small Screen');
         container.appendChild(cpuImageContainer);
         container.appendChild(cpuBar);
     } else {
-        console.log('Large Screen');
         container.appendChild(cpuBar);
         container.appendChild(cpuImageContainer);
     }
@@ -174,11 +165,9 @@ function checkAnswer(userSelection, cpuSelection) {
                 currentResult.innerHTML = `You lose!<br>${cpuSelection} beats ${userSelection}.`;
                 incrementScore('cpu');
             } else if (cpuSelection === cases[i][4]) {
-                console.log("It's a draw!");
                 currentResult.innerHTML = `It's a draw!<br>Have another try.`;
                 incrementScore('nobody');
             } else {
-                console.log("Whoops! Try another option.");
                 alert("Whoops! Try another option.");
             }
         }
@@ -191,29 +180,24 @@ function checkAnswer(userSelection, cpuSelection) {
  */
  function incrementScore(winner) {
     if (winner === 'user') {
-        console.log(`${winner} wins.`);
         ++userScore.innerHTML;
         userScore.style.color = 'green';
         cpuScore.style.color = 'red';
         currentResult.style.color = 'green';
     } else if (winner === 'cpu') {
-        console.log(`${winner} wins.`);
         ++cpuScore.innerHTML;
         userScore.style.color = 'red';
         cpuScore.style.color = 'green';
         currentResult.style.color = 'red';
     } else if (winner === 'nobody') {
-        console.log(`${winner} wins.`);
         userScore.style.color = 'black';
         cpuScore.style.color = 'black';
         currentResult.style.color = 'black';
     } else {
-        console.log("Error! No winner was determined.");
         alert("Error! No winner was determined.");
     }
 
     if (userScore.innerHTML === '10') {
-        console.log("Congratulations! You've won the match!");
         Swal.fire({
             title: 'Well Done!',
             text: "Congratulations! You've won the match!",
@@ -221,7 +205,6 @@ function checkAnswer(userSelection, cpuSelection) {
         })
         declareWinner('user');
     } else if (cpuScore.innerHTML === '10') {
-        console.log("Unlucky! You've lost the match!");
         Swal.fire({
             title: 'Unlucky!',
             text: "You've lost the match! Better luck next time!",
