@@ -1,6 +1,8 @@
 # Rock, Paper, Scissors, Lizard, Spock
 
 ## Site Overview
+Challenge your luck against the computer in a contemporary variation of the traditional game of chance. The two additional variables - Lizard and Spock - add complextiy to both the rules and
+However, the extra rules of the game are displayed intuitively, as players select their attack directly from the winner hierarchy figure, removing the need to be fluent in the combination outcomes. Suspense is built as a countdown sequence triggers every time a selection is made, before the winner of the point is revealed. The winner and loser are easily discerned through colour coding of the scores and the result message. Do you have what it takes to take on the computer?
 
 ![Am I Responsive website]()
 
@@ -26,10 +28,18 @@
 
 ## Planning Stage
 ### Target Audience
-* User who have... 
+* Users who wish to engage in a more complex version of Rock, Paper, Scissors.
+* Users who are looking to design and code interactive games themselves.
+* Younger users who are looking to play a simple, engaging game with a short duration.
+* Users who are looking to interactively learn the rules of Rock, Paper, Scissors, Lizard, Spock to play externally with friends.
 
 ### User Stories
-* As a user, I want to...
+* As a user, I want a simple, clean layout, providing everything I need for smooth gameplay.
+* As a user, I want to easily access instructions of how to play the game.
+* As a user, I want to easily select my chosen attack in an intuitive manner.
+* As a user, I want to easily view the winner of each point and receive an explanation of the result.
+* As a user, I want to easily reset the game to play again as many times as desired.
+
 
 ### Colour Scheme
 
@@ -40,13 +50,19 @@
 
 ### Game Area
 
+
 ### Integrated Attack Selection
 The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
 
-### Countdown
+### Countdown Sequence
+After the user selects and attack, a countdown sequence is triggered. The words "Rock", "Paper", "Scissors", "Lizard", "Spock" flash in the center of the screen before returning the outcome of the point. This creates anticipation over the result after the user locks in their selection. All selector buttons are disabled for the duration of the countdown to prevent the result from being overridden or from sending unaccepted inputs through the code.
+![Countdown Sequence]()
 
+### Responsive Colouring
+The winner and loser's scores are displayed in green and red respectively to provide and instant visual indicator of the victor. Additionally result text is coloured in accordance to the it user's outcome.
+![Winner/Loser Colouring]()
 
-### Game Review
+### Declaring the Winner
 
 
 ## Future Enhancements

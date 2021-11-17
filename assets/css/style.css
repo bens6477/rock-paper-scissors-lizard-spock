@@ -74,6 +74,11 @@ footer a {
 #rules ol {
     list-style-position: inside;
     padding-left: 0;
+    text-transform: lowercase;
+}
+
+#rules li {
+    text-transform: initial;
 }
 
 .player-area, .central-area {
