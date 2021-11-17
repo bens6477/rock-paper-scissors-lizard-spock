@@ -21,11 +21,11 @@
 
 /* stlye title area */
 .title-area {
-    margin: 0.5rem 0;
+    margin: 1rem 0 3rem 0;
 }
 
 .title-area h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 0.1rem 0;
 }
 
@@ -35,7 +35,7 @@ footer {
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    margin: 0.25rem;
+    margin: 1rem;
 }
 
 footer a {
@@ -68,7 +68,7 @@ footer a {
 #rules {
     margin: 0 auto;
     padding-top: 1rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 #rules ol {
@@ -126,7 +126,7 @@ footer a {
 }
 
 /* style buttons */
-.btn {
+.btn, .btn-small {
     padding: 0.5rem;
     margin: 0.5rem;
     font-size: 1rem;
@@ -135,14 +135,14 @@ footer a {
     background-color: #1b1d4e;
 }
 
-.btn-small {
+/* .btn-small {
     padding: 0.3rem;
     margin: 0 0.5rem;
     font-size: 0.5rem;
     border-radius: 0.25rem;
     color: #ffffff;
     background-color: #1b1d4e;
-}
+} */
 
 /* style buttons within user image */
 .btn-user {
@@ -215,8 +215,16 @@ footer a {
 
 /* Threshold for vertical stacking */
 @media screen and (max-width: 800px) {
+    .title-area {
+        margin: 1.5rem 0;
+    }
+
     .title-area h1 {
         font-size: 1.5rem;
+    }
+
+    footer {
+        margin: 0.25rem;
     }
 
     #rules-image-container {
@@ -234,7 +242,7 @@ footer a {
     .central-area {
         display: block;
         width: 100%;
-        height: 3rem;
+        height: 7rem;
         position: relative;
     }
 
@@ -266,6 +274,10 @@ footer a {
 }
 
 @media screen and (max-width: 400px) {
+    .title-area {
+        margin: 0.5rem 0;
+    }
+
     .title-area h1, .games-area h2 {
         font-size: 0.8rem;
         padding: 0;
@@ -275,8 +287,19 @@ footer a {
         font-size: 0.6rem;
     }
 
+    .central-area {
+        height: 3rem;
+    }
+
     .btn {
         font-size: 0.8rem;
+    }
+
+    .btn-small {
+        padding: 0.3rem;
+        margin: 0 0.5rem;
+        font-size: 0.5rem;
+        border-radius: 0.25rem;
     }
 
     .image-container {
