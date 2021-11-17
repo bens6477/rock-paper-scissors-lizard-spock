@@ -25,8 +25,8 @@
 }
 
 .title-area h1 {
-    font-size: 2.5rem;
-    padding: 0.5rem 0;
+    font-size: 2rem;
+    padding: 0.1rem 0;
 }
 
 /* style footer */
@@ -55,13 +55,15 @@ footer a {
 }
 
 #rules-image-container {
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
+    border-radius: 10%;
+    overflow: hidden;
 }
 
 #rules {
     margin: 0 auto;
-    padding: 1rem;
+    padding-top: 1rem;
     font-size: 1.25rem;
 }
 
@@ -108,18 +110,13 @@ footer a {
 }
 
 /* style images */
-.rules-image-container img {
-    width: 100%;
-}
-
-.image-container {
-    border: 1px solid #000000;
+.image-container, .rules-image-container {
     border-radius: 10%;
     margin: 1rem;
     overflow: hidden;
 }
 
-.image-container img {
+.image-container img, .rules-image-container img {
     width: 100%;
     margin-bottom: -0.3rem;
 }
