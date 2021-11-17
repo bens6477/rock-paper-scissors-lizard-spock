@@ -27,17 +27,25 @@ let cpuImageContainer = document.getElementById('cpu-image-container');
 let container = cpuImageContainer.parentNode;
 
 // Run game after DOM has finished loading, listening for button clicks.
-document.addEventListener("DOMContentLoaded", listeners);
-
-
-/**
- * Listen for key gameplay events
- */
-function listeners() {
+document.addEventListener("DOMContentLoaded", function() {
+    stackScore();
     verticalThreshold.addEventListener('change', stackScore);
 
     for (let button of buttons) {
-        button.addEventListener('click', () => buttonEvents(button)); // TEST CODE (buttonEvents function)
+        button.addEventListener('click', function() {
+            if (button.getAttribute('data-type') === 'play-game') {
+                resetBoard();
+            } else if (button.getAttribute('data-type') === 'resume') {
+                rulesArea.classList.add('hide');
+                matchArea.classList.remove('hide');
+            } else if (button.getAttribute('data-type') === 'rules') {
+                rulesArea.classList.remove('hide');
+                matchArea.classList.add('hide');
+            } else {
+                let userSelection = button.getAttribute("data-type");
+                runGame(userSelection);
+            }
+        }); // TEST CODE (buttonEvents function)
     }
 
     // Enable keyboard shortcuts
@@ -65,6 +73,7 @@ function listeners() {
             case "r":
                 resetBoard();
                 break;
+            // Delete this upon submission ****************************************
             case "9":
                 console.log('9 pressed');
                 userScore.innerHTML = '9';
@@ -72,23 +81,12 @@ function listeners() {
                 break;
         }
     })
-}
+});
 
 
 // TEST CODE
 function buttonEvents(button) { // TEST CODE
-    if (button.getAttribute('data-type') === 'play-game') {
-        resetBoard();
-    } else if (button.getAttribute('data-type') === 'resume') {
-        rulesArea.classList.add('hide');
-        matchArea.classList.remove('hide');
-    } else if (button.getAttribute('data-type') === 'rules') {
-        rulesArea.classList.remove('hide');
-        matchArea.classList.add('hide');
-    } else {
-        let userSelection = button.getAttribute("data-type");
-        runGame(userSelection);
-    }
+    
 }
 
 
@@ -109,8 +107,6 @@ function runGame(userSelection) {
             resultsArea.classList.add('hide-center');
             countdownArea.classList.remove('hide-center');
             titleIndex = 0;
-            activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-            activeTitle.classList.add('active-title');
             countdownArea.innerHTML = options[titleIndex];
             setTimeout(() => countdown(userSelection), 300);
         }
@@ -138,11 +134,8 @@ function stackScore() {
  * images and checking answer.
  */
 function countdown(userSelection) {
-    activeTitle.classList.remove('active-title');
 	titleIndex += 1;
 	if (titleIndex < 5) {
-        activeTitle = document.getElementById(`title-${options[titleIndex]}`);
-        activeTitle.classList.add('active-title');
         countdownArea.innerHTML = options[titleIndex];
 		setTimeout(() => countdown(userSelection), 300);
 	} else if (titleIndex === 5) {

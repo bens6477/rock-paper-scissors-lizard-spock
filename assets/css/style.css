@@ -59,7 +59,7 @@ footer a {
 }
 
 #rules-image-container {
-    width: 30%;
+    width: 50%;
     margin: 0 auto;
     border-radius: 10%;
     overflow: hidden;
@@ -68,7 +68,7 @@ footer a {
 #rules {
     margin: 0 auto;
     padding-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 #rules ol {
@@ -111,16 +111,17 @@ footer a {
 
 #countdown-area {
     font-size: 2rem;
+    color: #1b1d4e;
 }
 
 /* style images */
-.image-container, .rules-image-container {
+.image-container {
     border-radius: 10%;
     margin: 1rem;
     overflow: hidden;
 }
 
-.image-container img, .rules-image-container img {
+.image-container img {
     width: 100%;
     margin-bottom: -0.3rem;
 }
@@ -135,15 +136,6 @@ footer a {
     background-color: #1b1d4e;
 }
 
-/* .btn-small {
-    padding: 0.3rem;
-    margin: 0 0.5rem;
-    font-size: 0.5rem;
-    border-radius: 0.25rem;
-    color: #ffffff;
-    background-color: #1b1d4e;
-} */
-
 /* style buttons within user image */
 .btn-user {
     padding: 0;
@@ -153,7 +145,7 @@ footer a {
     width: 30%;
     height: 30%;
     border-radius: 50%;
-    /* add opacity: 0; when submitting */
+    /* add opacity: 0; when submitting ******************************************************* */
     background-color: rgba(255, 0, 0, 0.5);
 }
 
@@ -186,20 +178,10 @@ footer a {
     left: 20%;
 }
 
-/* style active title with countdown */
-.normal-title {
-    color: #000000;
-}
-
-.active-title {
-    color: #ff0000;
-}
-
 /* add class to hide elements upon request */
 .hide, .hide-center {
     display: none;
 }
-
 
 /* add media queries for responsive deisgn */
 @media screen and (max-width: 950px) {
@@ -228,15 +210,11 @@ footer a {
     }
 
     #rules-image-container {
-        width: 40%;
-    }
-
-    #rules ol {
-        font-size: 0.8rem;
+        width: 60%;
     }
 
     .games-area, #rules-area {
-        width: 100%;
+        width: 95%;
     }
 
     .central-area {
@@ -285,6 +263,10 @@ footer a {
 
     #rules {
         font-size: 0.6rem;
+    }
+
+    #rules-image-container {
+        width: 40%;
     }
 
     .central-area {
