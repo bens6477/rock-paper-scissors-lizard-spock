@@ -72,8 +72,8 @@ Various additional features would bring a greater user experience to the website
 
 ## Technology Used
 * HTML, CSS and JavaScript programming languages
-* [Google Fonts](https://fonts.google.com/) - ***
-* [Font Awesome](https://fontawesome.com/) - ***
+* [Google Fonts](https://fonts.google.com/specimen/Russo+One/) - 'Russo One' style 
+* [Font Awesome](https://fontawesome.com/v5.15/icons/github) - GitHub icon
 * [GitPod](https://www.gitpod.io/) - IDE for local developement
 * [GIT](https://git-scm.com/) - Version Control
 * [GitHub](https://github.com/) - to host the repositories for this project and the live website preview

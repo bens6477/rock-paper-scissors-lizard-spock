@@ -1,4 +1,3 @@
-// Declare constants and variables
 let titleIndex = 0;
 let buttonIncomplete = false;
 
@@ -19,7 +18,6 @@ const resultsArea = document.getElementById('results-area');
 const buttons = document.getElementsByTagName('button');
 const currentResult = document.getElementById('current-result');
 const countdownArea = document.getElementById('countdown-area');
-const activeTitle = document.getElementById(`title-${options[titleIndex]}`);
 const userScore = document.getElementById('user-score');
 const cpuScore = document.getElementById('cpu-score');
 const userImage = document.getElementById('user-image');
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 cpuScore.innerHTML = '9';
                 break;
         }
-    })
+    });
 });
 
 
@@ -94,7 +92,7 @@ function runGame(userSelection) {
                 title: 'Oops!',
                 text: "The match has finished! Press Reset Game to play again.",
                 icon: 'error',
-            })
+            });
         } else {
             buttonIncomplete = true;
             resultsArea.classList.add('hide-center');
@@ -202,14 +200,14 @@ function checkAnswer(userSelection, cpuSelection) {
             title: 'Well Done!',
             text: "Congratulations! You've won the match!",
             icon: 'success',
-        })
+        });
         declareWinner('user');
     } else if (cpuScore.innerHTML === '10') {
         Swal.fire({
             title: 'Unlucky!',
             text: "You've lost the match! Better luck next time!",
             icon: 'error',
-        })
+        });
         declareWinner('cpu');
     } else {
         imageReset();
@@ -252,9 +250,9 @@ function declareWinner(victor) {
 function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
     currentResult.innerHTML = "Let's Play!<br>Choose your attack.";
-    userScore.style.color = 'black'
-    cpuScore.style.color = 'black'
-    currentResult.style.color = 'black'
+    userScore.style.color = 'black';
+    cpuScore.style.color = 'black';
+    currentResult.style.color = 'black';
     changeImage(userImage, 'selection', 'jpg');
     changeImage(cpuImage, 'selection', 'jpg');
     rulesArea.classList.add('hide');
