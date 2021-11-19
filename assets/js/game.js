@@ -96,7 +96,7 @@ function runGame(userSelection) {
         if (userScore.innerHTML === '10' || cpuScore.innerHTML === '10') {
             Swal.fire({
                 title: 'Oops!',
-                text: "The match has finished! Press Reset Game to play again.",
+                text: "The match has finished! Press Reset to play again.",
                 icon: 'error',
             });
         } else {
@@ -138,8 +138,8 @@ function countdown(userSelection) {
         let cpuSelection = options[cpuIndex];
         resultsArea.classList.remove('hide-center');
         countdownArea.classList.add('hide-center');
-        changeImage(userImage, userSelection, 'png');
-        changeImage(cpuImage, cpuSelection, 'png');
+        changeImage(userImage, userSelection);
+        changeImage(cpuImage, cpuSelection);
         checkAnswer(userSelection, cpuSelection);
     }
 }
@@ -148,8 +148,8 @@ function countdown(userSelection) {
 /**
  * Changes the player's image depending on selection.
  */
-function changeImage(playerImage, selection, format) {
-    playerImage.src = `assets/images/${selection}.${format}`;
+function changeImage(playerImage, selection) {
+    playerImage.src = `assets/images/${selection}.webp`;
 }
 
 
@@ -225,8 +225,8 @@ function checkAnswer(userSelection, cpuSelection) {
  */
 function imageReset() {
     setTimeout(function() {
-        changeImage(userImage, 'selection', 'jpg');
-        changeImage(cpuImage, 'selection', 'jpg');
+        changeImage(userImage, 'selection');
+        changeImage(cpuImage, 'selection');
     }, 2000);
     buttonIncomplete = false;
 }
@@ -238,12 +238,12 @@ function imageReset() {
 function declareWinner(victor) {
     victor = 'user';
     if (victor === 'user') {
-        changeImage(userImage, 'winner', 'jpg');
-        changeImage(cpuImage, 'loser', 'png');
+        changeImage(userImage, 'winner');
+        changeImage(cpuImage, 'loser');
         currentResult.innerHTML = `Well Done! You Win!<br>Click reset to play again!`;
     } else {
-        changeImage(userImage, 'loser', 'png');
-        changeImage(cpuImage, 'winner', 'jpg');
+        changeImage(userImage, 'loser');
+        changeImage(cpuImage, 'winner');
         currentResult.innerHTML = `Unlucky! You Lose.<br>Click reset to play again.`;
     }
     buttonIncomplete = false;
@@ -259,8 +259,8 @@ function resetBoard() {
     userScore.style.color = 'black';
     cpuScore.style.color = 'black';
     currentResult.style.color = 'black';
-    changeImage(userImage, 'selection', 'jpg');
-    changeImage(cpuImage, 'selection', 'jpg');
+    changeImage(userImage, 'selection');
+    changeImage(cpuImage, 'selection');
     rulesArea.classList.add('hide');
     matchArea.classList.remove('hide');
 }

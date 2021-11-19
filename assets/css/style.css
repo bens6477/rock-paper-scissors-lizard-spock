@@ -274,7 +274,12 @@ footer a {
         margin: 0.5rem 0;
     }
 
-    .title-area h1, .games-area h2 {
+    .title-area h1 {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .games-area h2 {
         font-size: 0.8rem;
         padding: 0;
     }
