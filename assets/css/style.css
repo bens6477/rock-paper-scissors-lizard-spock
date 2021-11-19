@@ -35,11 +35,14 @@ footer {
     bottom: 0;
     width: 100%;
     overflow: hidden;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 footer a {
     text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
 }
 
 /* style and position game area sections */
@@ -217,7 +220,7 @@ footer a {
     }
 
     footer {
-        margin: 0.25rem;
+        margin: 0.25rem 0;
     }
 
     #rules-image-container {
@@ -233,6 +236,10 @@ footer a {
         width: 100%;
         height: 7rem;
         position: relative;
+    }
+
+    .btn-small {
+        font-size: 0.75rem;
     }
 
     #results-area {
@@ -273,7 +280,7 @@ footer a {
     }
 
     #rules {
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
 
     #rules-image-container {
@@ -290,8 +297,8 @@ footer a {
 
     .btn-small {
         padding: 0.3rem;
-        margin: 0 0.5rem;
-        font-size: 0.5rem;
+        margin: 0;
+        font-size: 0.75rem;
         border-radius: 0.25rem;
     }
 

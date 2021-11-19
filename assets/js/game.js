@@ -31,16 +31,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     for (let button of buttons) {
         button.addEventListener('click', function() {
-            if (button.getAttribute('data-type') === 'play-game') {
-                resetBoard();
-            } else if (button.getAttribute('data-type') === 'resume') {
-                rulesArea.classList.add('hide');
-                matchArea.classList.remove('hide');
-            } else if (button.getAttribute('data-type') === 'rules') {
-                rulesArea.classList.remove('hide');
-                matchArea.classList.add('hide');
-            } else {
-                let userSelection = button.getAttribute("data-type");
+            switch (button.getAttribute('data-type')) {
+                case  'play-game':
+                    resetBoard();
+                    break;
+                case  'resume':
+                    rulesArea.classList.add('hide');
+                    matchArea.classList.remove('hide');
+                    break;
+                case  'rules':
+                    rulesArea.classList.remove('hide');
+                    matchArea.classList.add('hide');
+                    break;
+                case  'github':
+                    break;
+                default:
+                    let userSelection = button.getAttribute("data-type");
                 runGame(userSelection);
             }
         });

@@ -97,9 +97,11 @@ Various additional features would bring a greater user experience to the website
 
 ### Validator Testing
 #### HTML
-* No errors were found when running the html code through the [official W3C validator](https://validator.w3.org/).
+* No errors were found when running the HTML code through the [official W3C validator](https://validator.w3.org/).
 #### CSS
-* No errors were found when running the css code through the [official W3C Jigsaw validator](https://jigsaw.w3.org/css-validator/).
+* No errors were found when running the CSS code through the [official W3C Jigsaw validator](https://jigsaw.w3.org/css-validator/).
+#### JavaScript
+* No errors were found when running the JavaScript code through the [JSHint validator](https://jshint.com/).
 #### Accessibility
 * The website was tested using the Lighthouse function in Chrome DevTools, showing a accessibility level of 100%.
     
