@@ -137,8 +137,14 @@ footer a {
     margin: 0.5rem;
     font-size: 1rem;
     border-radius: 0.25rem;
+    border: 1px solid #1b1d4e;
     color: #ffffff;
     background-color: #1b1d4e;
+}
+
+.btn:hover, .btn-small:hover {
+    color: #1b1d4e;
+    background-color: #ffffff;
 }
 
 /* style buttons within user image */
