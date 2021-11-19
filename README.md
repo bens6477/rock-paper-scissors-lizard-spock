@@ -105,8 +105,19 @@ Various additional features would bring a greater user experience to the website
     
 
 ### Bugs
+* **Issue** - Embedding selection buttons within the attack options in the image.
+    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. 
+    https://stackoverflow.com/questions/24435397/click-particular-region-of-image
+
+* **Issue** - Creating a countdown feature before revealing the result.
+    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete.
+    https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/ 
+
+* **Issue** - Capability for selector buttons to be pressed before countdown sequence was finished.
+    * **Resolution** - The <code>buttonIncomplete</code> was initialised to false and was updated to true upon the user selecting an attack. While <code>buttonIncomplete</code> was true, no other attack options could be selected. Once the winner of the point had been declared, it was reassigned back to false and another option could be chosen. 
+
 * **Issue** - Dynamically hiding elements from view during gameplay.
-    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the score, result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html.
+    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html.
     https://careerkarma.com/blog/css-hide-element/
 
 * **Issue** - Functions running immediately when assigning event listeners.
@@ -117,15 +128,13 @@ Various additional features would bring a greater user experience to the website
     * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop.
     https://sweetalert2.github.io/
 
-* **Issue** - Embedding selection buttons within the attack options in the image.
-    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. 
-    https://stackoverflow.com/questions/24435397/click-particular-region-of-image
-
-* **Issue** - Creating a countdown feature before revealing the result.
-    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete.
-    https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/ 
+* **Issue** - Resetting the board after each outcome was declared.
+    * **Resolution** - To keep a fast paced flow to the game, after declating the winner of each point the images of each player's attack were shown for two seconds before the returning to the selection image. The <code>setTimeout()</code>, meaning the user did not need to press a button to acknowledge the result. The result text, however, remained unchanged in the center, should the player have missed the combination from the images.
 
 * **Issue** - Asynchronous flow
+    * **Resolution** - 
+
+* **Issue** - 
     * **Resolution** - 
 
 * **Issue** - 

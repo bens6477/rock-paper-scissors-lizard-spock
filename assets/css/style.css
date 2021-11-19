@@ -98,6 +98,10 @@ footer a {
     padding: 1rem;
 }
 
+.player-name {
+    font-size: 2rem;
+}
+
 .central-area {
     width: 20%;
 }
@@ -197,7 +201,7 @@ footer a {
 /* add media queries for responsive deisgn */
 @media screen and (max-width: 950px) {
     .title-area h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
         padding: 1rem 0;
     }
 
@@ -210,10 +214,6 @@ footer a {
 @media screen and (max-width: 800px) {
     .title-area {
         margin: 1.5rem 0;
-    }
-
-    .title-area h1 {
-        font-size: 1.5rem;
     }
 
     footer {
