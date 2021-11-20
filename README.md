@@ -21,10 +21,10 @@ However, the extra rules of the game are displayed intuitively, as players selec
     * [Validator Testing](#validator-testing)
     * [Bugs](#bugs)
     * [Unfixed Bugs](#unfixed-bugs)
-1. [Deployment](#features)
-1. [Credits](#features)
-    * [Content](#features)
-    * [Media](#features)
+1. [Deployment](#deployment)
+1. [Credits](#credits)
+    * [Content](#content)
+    * [Media](#media)
 
 ## Planning Stage
 ### Target Audience
@@ -45,7 +45,6 @@ However, the extra rules of the game are displayed intuitively, as players selec
 
 
 ## Features
-
 ### Instruction Page
 
 ### Game Area
@@ -63,7 +62,7 @@ The winner and loser's scores are displayed in green and red respectively to pro
 ![Winner/Loser Colouring]()
 
 ### Declaring the Winner
-
+Once either player reaches 10 point the winner is declared, returning a trophy image to the victor's game area and a red cross to the loserd's game area. All selector buttons are prevented from triggering from this point onwards, until the user selects to reset the game and play again. Should a selector be pressed, a Sweet Alert message will appear to reitterate this to the user.
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
@@ -87,6 +86,9 @@ Various additional features would bring a greater user experience to the website
 * The website was responsive across screen sizes between 320px and 1600px in width. Content readablility was optimised by altering the size and positioning of elements. 
 * ***The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
 
+*** Error Check Thiss!!!!
+* **The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
+
 
 #### Desktop Homepage Lighthouse Results
 ![Desktop Homepage Lightouse Results]()
@@ -108,39 +110,26 @@ Various additional features would bring a greater user experience to the website
 
 ### Bugs
 * **Issue** - Embedding selection buttons within the attack options in the image.
-    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. 
-    https://stackoverflow.com/questions/24435397/click-particular-region-of-image
+    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. [Adapted from Stack Overflow](https://stackoverflow.com/questions/24435397/click-particular-region-of-image)
 
 * **Issue** - Creating a countdown feature before revealing the result.
-    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete.
-    https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/ 
+    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete. [Adapted from Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/)
 
 * **Issue** - Capability for selector buttons to be pressed before countdown sequence was finished.
-    * **Resolution** - The <code>buttonIncomplete</code> was initialised to false and was updated to true upon the user selecting an attack. While <code>buttonIncomplete</code> was true, no other attack options could be selected. Once the winner of the point had been declared, it was reassigned back to false and another option could be chosen. 
+    * **Resolution** - The <code>buttonIncomplete</code> was initialised to false and was updated to true upon the user selecting an attack. While <code>buttonIncomplete</code> was true, no other attack options could be selected. Once the winner of the point had been declared, it was reassigned back to false and another option could be chosen. Similarly, once either player reached 10 points a Sweet Alert appears to inform the user to reset the game, and the selectors would not initiate the countdown sequence.
 
 * **Issue** - Dynamically hiding elements from view during gameplay.
-    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html.
-    https://careerkarma.com/blog/css-hide-element/
+    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html. [Adapted from Career Karma](https://careerkarma.com/blog/css-hide-element/)
 
 * **Issue** - Functions running immediately when assigning event listeners.
-    * **Resolution** - The syntax of the listener was assigned to <code>() => functionName(variable))</code> instead of simply <code>functionName(variable)</code>. If no variables were passed into the function, passing only <code>functionName</code> prevented the immediate running of the function.
-    https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to
+    * **Resolution** - The syntax of the listener was assigned to <code>() => functionName(variable))</code> instead of simply <code>functionName(variable)</code>. If no variables were passed into the function, passing only <code>functionName</code> prevented the immediate running of the function. [Adapted from Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to)
+    
 
 * **Issue** - Alerts disturbing the flow of events.
-    * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop.
-    https://sweetalert2.github.io/
+    * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop. [Adapted from Sweet Alert](https://sweetalert2.github.io/)
 
 * **Issue** - Resetting the board after each outcome was declared.
     * **Resolution** - To keep a fast paced flow to the game, after declating the winner of each point the images of each player's attack were shown for two seconds before the returning to the selection image. The <code>setTimeout()</code>, meaning the user did not need to press a button to acknowledge the result. The result text, however, remained unchanged in the center, should the player have missed the combination from the images.
-
-* **Issue** - Asynchronous flow
-    * **Resolution** - 
-
-* **Issue** - 
-    * **Resolution** - 
-
-* **Issue** - 
-    * **Resolution** - 
 
 ### Unfixed Bugs
 There are no known bugs left unfixed.
@@ -152,13 +141,15 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 1. Click on the Pages tab from the list of options on the left hand side of the page.
 1. Under Source click the drop-down menu labelled None and select main as the branch.
 1. Once saved the link to the page will be provided above the ‘Source’ sub-section upon refreshing.
-1. The live link can be found here - ***
+1. The live link can be found here - https://bens6477.github.io/rock-paper-scissors-lizard-spock/
 
 ## Credits
 ### Content
-
+* Any code credits are provided in the [Bugs](#bugs) section.
+* The icons in the footer were taken from Font Awesome.
+* All fonts were imported from Google Fonts.
 
 ### Media
-
-
-<a href='https://www.freepik.com/vectors/business'>Business vector created by rawpixel.com - www.freepik.com</a>
+* The main figure with attacks was taken from the images in this eBay [T-Shirt](https://www.ebay.co.uk/itm/273532646173). Each individual attack image was cropped from the parent image above.
+* The trophy winner image was taken from [freepik](https://www.freepik.com/vectors/business).
+* The red cross loser image was taken from [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Red_X.svg/1024px-Red_X.svg.png).

@@ -185,18 +185,18 @@ function checkAnswer(userSelection, cpuSelection) {
  function incrementScore(winner) {
     if (winner === 'user') {
         ++userScore.innerHTML;
-        userScore.style.color = 'green';
-        cpuScore.style.color = 'red';
-        currentResult.style.color = 'green';
+        userScore.style.color = '#006100';
+        cpuScore.style.color = '#A12B2B';
+        currentResult.style.color = '#006100';
     } else if (winner === 'cpu') {
         ++cpuScore.innerHTML;
-        userScore.style.color = 'red';
-        cpuScore.style.color = 'green';
-        currentResult.style.color = 'red';
+        userScore.style.color = '#A12B2B';
+        cpuScore.style.color = '#006100';
+        currentResult.style.color = '#A12B2B';
     } else if (winner === 'nobody') {
-        userScore.style.color = 'black';
-        cpuScore.style.color = 'black';
-        currentResult.style.color = 'black';
+        userScore.style.color = '#74522F';
+        cpuScore.style.color = '#74522F';
+        currentResult.style.color = '#74522F';
     } else {
         alert("Error! No winner was determined.");
     }
@@ -227,7 +227,7 @@ function imageReset() {
     setTimeout(function() {
         changeImage(userImage, 'selection');
         changeImage(cpuImage, 'selection');
-    }, 2000);
+    }, 3000);
     buttonIncomplete = false;
 }
 
@@ -256,9 +256,9 @@ function declareWinner(victor) {
 function resetBoard() {
     userScore.innerHTML = cpuScore.innerHTML = 0;
     currentResult.innerHTML = "Let's Play!<br>Choose your attack.";
-    userScore.style.color = 'black';
-    cpuScore.style.color = 'black';
-    currentResult.style.color = 'black';
+    userScore.style.color = '#74522F';
+    cpuScore.style.color = '#74522F';
+    currentResult.style.color = '#74522F';
     changeImage(userImage, 'selection');
     changeImage(cpuImage, 'selection');
     rulesArea.classList.add('hide');
