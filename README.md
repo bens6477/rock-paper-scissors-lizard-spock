@@ -42,7 +42,12 @@ However, the extra rules of the game are displayed intuitively, as players selec
 
 
 ### Colour Scheme
-
+* The site's main colours of black, white and navy blue and dark beige were chosen as a stonewashed pallet.
+* A colour grid was created to evaluate appropriate colour pairings using the [Eight Shapes Color Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%231b1d4e%0D%0A%2374522F%0D%0A%23A12B2B%0D%0A%23006100&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp). The left column shows that the all colours have sufficient legibility contrast over white backgrounds.
+* The dark beige colour was used to accentuate titles and key information, and to break away from the main navy blue theme colour. 
+* The shades of red and green were chosen with sufficient contrast on a white background, while providing enough intensity to quickly distinguish the winner and loser.
+* From this it was decided that all fonts would be kept black upon either white or golden background colours in order to provide sufficient contrast for the users. The inversion was also used to highlight active classes or upon hovering over elements.
+![Eight Shapes Color Grid](assets/images/readme/color-contrast.PNG)
 
 ## Features
 ### Instruction Page

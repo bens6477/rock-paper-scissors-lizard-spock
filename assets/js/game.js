@@ -187,13 +187,13 @@ function checkAnswer(userSelection, cpuSelection) {
  function incrementScore(winner) {
     if (winner === 'user') {
         ++userScore.innerHTML;
-        userScore.style.color = '#006100';
+        userScore.style.color = '#006800';
         cpuScore.style.color = '#A12B2B';
-        currentResult.style.color = '#006100';
+        currentResult.style.color = '#006800';
     } else if (winner === 'cpu') {
         ++cpuScore.innerHTML;
         userScore.style.color = '#A12B2B';
-        cpuScore.style.color = '#006100';
+        cpuScore.style.color = '#006800';
         currentResult.style.color = '#A12B2B';
     } else if (winner === 'nobody') {
         userScore.style.color = '#74522F';
