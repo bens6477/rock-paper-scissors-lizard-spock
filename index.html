@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Challenge your luck against the computer in a contemporary variation of the traditional game of chance.">
     <meta name="keywords" content="rock paper scissors lizard spock game">
+    <!-- CSS stylesheet, Google Fonts and Favicon -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <title>Rock, Paper, Scissors,Lizard, Spock</title>
 </head>
@@ -63,11 +67,11 @@
             </div>
             <div id="user-image-container" class="image-container">
                 <img id="user-image" src="assets/images/selection.webp" alt="Rock Paper Scissors Lizard Spock">
-                <button id="rock-button" data-type="rock" class="btn-user"></button>
-                <button id="paper-button" data-type="paper" class="btn-user"></button>
-                <button id="scissors-button" data-type="scissors" class="btn-user"></button>
-                <button id="lizard-button" data-type="lizard" class="btn-user"></button>
-                <button id="spock-button" data-type="spock" class="btn-user"></button>
+                <button id="rock-button" data-type="rock" class="btn-user" aria-label="Select Rock as attack"></button>
+                <button id="paper-button" data-type="paper" class="btn-user" aria-label="Select Paper as attack"></button>
+                <button id="scissors-button" data-type="scissors" class="btn-user" aria-label="Select Scissors as attack"></button>
+                <button id="lizard-button" data-type="lizard" class="btn-user" aria-label="Select Lizard as attack"></button>
+                <button id="spock-button" data-type="spock" class="btn-user" aria-label="Select Spock as attack"></button>
             </div>
             <p id="select-attack"><i class="fas fa-arrow-up"></i> Select your attack <i class="fas fa-arrow-up"></i></p>
         </div>
