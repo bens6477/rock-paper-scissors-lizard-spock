@@ -15,6 +15,7 @@ const container = cpuImageContainer.parentNode;
 const rulesArea = document.getElementById('rules-area');
 const matchArea = document.getElementById('match-area');
 const resultsArea = document.getElementById('results-area');
+const selectAttack = document.getElementById('select-attack');
 const buttons = document.getElementsByTagName('button');
 const currentResult = document.getElementById('current-result');
 const countdownArea = document.getElementById('countdown-area');
@@ -102,6 +103,7 @@ function runGame(userSelection) {
         } else {
             buttonIncomplete = true;
             resultsArea.classList.add('hide-center');
+            selectAttack.classList.add('hide-center');
             countdownArea.classList.remove('hide-center');
             titleIndex = 0;
             countdownArea.innerHTML = options[titleIndex];
@@ -227,6 +229,7 @@ function imageReset() {
     setTimeout(function() {
         changeImage(userImage, 'selection');
         changeImage(cpuImage, 'selection');
+        selectAttack.classList.remove('hide-center');
     }, 3000);
     buttonIncomplete = false;
 }
