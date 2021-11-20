@@ -139,6 +139,7 @@ Various additional features would bring a greater user experience to the website
 ### Bugs
 * **Issue** - Generating the winner outcome.
     * **Resolution** - No tutorials were used when writing the code to detemine the winner.
+
 * **Issue** - Embedding selection buttons within the attack options in the image.
     * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. [Adapted from Stack Overflow](https://stackoverflow.com/questions/24435397/click-particular-region-of-image)
 

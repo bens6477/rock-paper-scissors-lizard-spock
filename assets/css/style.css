@@ -60,12 +60,6 @@ footer a {
     color: #74522F;
 }
 
-#rules-area .btn {
-    background-color: #74522F;
-    border: 1px solid #74522F;
-
-}
-
 #rules-image-container {
     width: 50%;
     margin: 0 auto;
@@ -161,8 +155,18 @@ footer a {
     background-color: #1B1D4E;
 }
 
+#rules-area .btn {
+    background-color: #74522F;
+    border: 1px solid #74522F;
+}
+
 .btn:hover, .btn-small:hover {
     color: #1B1D4E;
+    background-color: #FFFFFF;
+}
+
+#rules-area .btn:hover {
+    color: #74522F;
     background-color: #FFFFFF;
 }
 
