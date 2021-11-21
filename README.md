@@ -57,12 +57,18 @@ A countdown sequence triggers every time a selection is made, building anticipat
 
 ## Features
 ### Instruction Page
+![Instruction Page]()
+
+
 
 ### Game Area
+The game area consists of two player areas - the user and the computer - containing their current score, and their current active image. Images vary dynamically between the attack selection figure, the player's chosen attack, and finally the winner/loser images after the game finishes.
+![Game Area]()
 
 
 ### Integrated Attack Selection
 The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
+![Attack Selector Buttons]()
 
 ### Countdown Sequence
 After the user selects and attack, a countdown sequence is triggered. The words "Rock", "Paper", "Scissors", "Lizard", "Spock" flash in the center of the screen before returning the outcome of the point. This creates anticipation over the result after the user locks in their selection. All selector buttons are disabled for the duration of the countdown to prevent the result from being overridden or from sending unaccepted inputs through the code.
@@ -70,23 +76,23 @@ After the user selects and attack, a countdown sequence is triggered. The words 
 
 ### Responsive Layout
 For wider screens, the user and computer game areas are side by side to optimally fill the window area. For thinner screens, such as mobiles and tablets, the player areas are stacked vertivally, giving the user the sense of playing directly in front of their opponent. CSS media queries were utilised to optimise the styling across the different screen sizes.
+![Horizontal vs. Vertical Stacking]()
 
-### Responsive Colouring
-The winner and loser's scores are displayed in green and red respectively to provide and instant visual indicator of the victor. Additionally result text is coloured in accordance to the it user's outcome.
+### Outcome Feedback 
+The last evaluated result is verbally transcribed in the central area, stating whether the user won/lost/drew and provinding an explanation of the combintation behind the scoring. The winner and loser's scores are displayed in green and red respectively to provide and instant visual indicator of the victor. Additionally result text is responsively coloured in accordance to the user's outcome.
 ![Winner/Loser Colouring]()
-
-^twin
-### Outcome Feedback
 
 ### Declaring the Winner
 Once either player reaches 10 point the winner is declared, returning a trophy image to the victor's game area and a red cross to the loserd's game area. All selector buttons are prevented from triggering from this point onwards, until the user selects to reset the game and play again. Should a selector be pressed, a Sweet Alert message will appear to reitterate this to the user.
+![Declaring the Winner]()
 
 ### Error Catching
-
+![Sweet Alert Error Catching]()
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
 * The addition of a two-player game, where two users can play against each other.
+* The addition of customisable winning score - e.g. first to 20, best of 15 etc.
 
 
 ## Technology Used
@@ -98,26 +104,25 @@ Various additional features would bring a greater user experience to the website
 * [GitHub](https://github.com/) - to host the repositories for this project and the live website preview
 
 
-## Testing ***
+## Testing
 * **Functionality Testing**
     * Checked all links and images on the website were work correctly.
     * Checked all icons in the user image triggered the appropriate attack.
     * Checked all keyboard commands operated correctly, triggering the user selection (1-5), viewing instructions (I) and reseting the game (R).
     * Checked all elements were responsive to screen size.
-    * 
 
+* **Compatibility Testing**
+    * The website was tested for responsivity across screen sizes of 320px, 768px, 1280px and 1600px in width, coving typical screens for mobiles, tablets, laptops and desktops. Content readablility was optimised by altering the size and positioning of elements.
+    * The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
+    * [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
 
-* All links and images on the website work correctly and all elements are responsive to screen size.
-* The website was tested across various browsers, including Google Chrome, Mozilla Firefox and Microsoft Edge.
-### Developer Tools ***
-* The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
-* The website was responsive across screen sizes between 320px and 1600px in width. Content readablility was optimised by altering the size and positioning of elements. 
-* The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
-
+* **Performance Testing**
+    * The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
+    * The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation.
+    * Lighthouse was ran for both desktop and mobile sites with the results shown below. 
 *** Error Check Thiss!!!!
-* **The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
-
-* [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
+    * The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
+    * Similarly, the performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
 
 
 #### Desktop Homepage Lighthouse Results
@@ -143,22 +148,22 @@ Various additional features would bring a greater user experience to the website
     * **Resolution** - A standardised outcome array was set up for each selection option with the syntax <code>selectionArray = [win, win, lose, lose, draw]</code>, representing the user's outcome relative to the computer's selection. For example <code>rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock']</code>, where rock beats scissors, loses to paper and so forth. Subsequently, each selection array was nested within the larger <code>cases</code> array, creating one variable from which all combinations could be accessed. This meant that <code>cases[i][j]</code> could be used to create the outcome logic for any combination, where i represented the user's selection, j represented the computer's selection, and the j index determined the user's outcome (win, lose, draw). No tutorials were used when writing the code to detemine the winner.
 
 * **Issue** - Embedding selection buttons within the attack options in the image.
-    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. [Adapted from Stack Overflow](https://stackoverflow.com/questions/24435397/click-particular-region-of-image)
+    * **Resolution** - Instead of using conventional buttons, absolute poisitioning was used to position the selector buttons accordingly within the encasing image container div. This meant the user could click on the icon of their attack, rather than from an external point outside of the image. Additionally, positioning using percentages ensured the button orientation was constant across different screen sizes. [Adapted from Stack Overflow](https://stackoverflow.com/questions/24435397/click-particular-region-of-image).
 
 * **Issue** - Creating a countdown feature before revealing the result.
-    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete. [Adapted from Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/)
+    * **Resolution** - The <code>setTimeout()</code> timing event was used to dynamically cycle through the countdown procedure. The <code>countdown()</code> function contained another <code>setTimeout()</code> that self-referenced the <code>countdown()</code> function, creating a loop of nested time events. The loop was broken using if-statment logic after the countdwon iterations were complete. [Adapted from Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/).
 
 * **Issue** - Capability for selector buttons to be pressed before countdown sequence was finished.
     * **Resolution** - The <code>buttonIncomplete</code> was initialised to false and was updated to true upon the user selecting an attack. While <code>buttonIncomplete</code> was true, no other attack options could be selected. Once the winner of the point had been declared, it was reassigned back to false and another option could be chosen. Similarly, once either player reached 10 points a Sweet Alert appears to inform the user to reset the game, and the selectors would not initiate the countdown sequence.
 
 * **Issue** - Dynamically hiding elements from view during gameplay.
-    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html. [Adapted from Career Karma](https://careerkarma.com/blog/css-hide-element/)
+    * **Resolution** - Main games area were assigned and unassigned the .hide class using JavaScript depending on whether they were active or not. Applying <code>display:none</code> allowed for the element to be hidden from view and also occupy no space on the screen. A separate .hide-center class was applied to elements in the center area such as the result and countdown text. This instead applied <code>visibility:hidden</code> to hide the content from view while keeping the structural integrity of the html. [Adapted from Career Karma](https://careerkarma.com/blog/css-hide-element/).
 
 * **Issue** - Functions running immediately when assigning event listeners.
-    * **Resolution** - The syntax of the listener was assigned to <code>() => functionName(variable))</code> instead of simply <code>functionName(variable)</code>. If no variables were passed into the function, passing only <code>functionName</code> prevented the immediate running of the function. [Adapted from Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to)
+    * **Resolution** - The syntax of the listener was assigned to <code>() => functionName(variable))</code> instead of simply <code>functionName(variable)</code>. If no variables were passed into the function, passing only <code>functionName</code> prevented the immediate running of the function. [Adapted from Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to).
     
 * **Issue** - Alerts disturbing the flow of events.
-    * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop. [Adapted from Sweet Alert](https://sweetalert2.github.io/)
+    * **Resolution** - Since the browser was forced to read <code>alert()</code> commands immediately, preceding code which had not been fully executed was stalled. For example the declaration of the winner stalled the rendering of images. The integration of sweetalert2 enabled alerts to be displayed dynamically without forcing all other code to stop. [Adapted from Sweet Alert](https://sweetalert2.github.io/).
 
 * **Issue** - Resetting the board after each outcome was declared.
     * **Resolution** - To keep a fast paced flow to the game, after declating the winner of each point the images of each player's attack were shown for two seconds before the returning to the selection image. The <code>setTimeout()</code>, meaning the user did not need to press a button to acknowledge the result. The result text, however, remained unchanged in the center, should the player have missed the combination from the images.
