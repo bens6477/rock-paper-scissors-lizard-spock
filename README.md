@@ -43,6 +43,8 @@ A countdown sequence triggers every time a selection is made, building anticipat
 * As a user, I want to easily reset the game to play again as many times as desired.
 
 ### Wireframes
+* Wireframes were created to plan the visual layout of the site, organise the content into sections and plan the structure for both desktop and mobile browsers.  To optimise the usage of space, the content spanned horizontally on wide screens, and stacked vertically on thinner screens.
+![Balsamiq Wireframes](assets/images/readme/wireframes.PNG)
 
 
 ### Colour Scheme
@@ -161,6 +163,9 @@ Various additional features would bring a greater user experience to the website
 * **Issue** - Resetting the board after each outcome was declared.
     * **Resolution** - To keep a fast paced flow to the game, after declating the winner of each point the images of each player's attack were shown for two seconds before the returning to the selection image. The <code>setTimeout()</code>, meaning the user did not need to press a button to acknowledge the result. The result text, however, remained unchanged in the center, should the player have missed the combination from the images.
 
+* **Issue** - Moving score locations when vertically stacking player areas.
+    * **Resolution** - For the horizontal orientation on larger screens, both player's scores are above their game image. However, when stacking vertically, this meant that the scores were not in close proximity and the user needed to actively seek out each score individually. Therefore, the simple <code>stackScore()</code> function was created to rearrange the computer's score below the image, having both score in the central region. This was triggered by the screen size crossing below the threshold for vertical stacking (800px) and reset to the default above the threshold. 
+
 ### Unfixed Bugs
 There are no known bugs left unfixed.
 
@@ -175,7 +180,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 ## Credits
 ### Content
-* Any code credits are provided in the [Bugs](#bugs) section.
+* Additional code credits are provided in the [Bugs](#bugs) section.
 * The icons in the footer and game area were taken from Font Awesome.
 * All fonts were imported from Google Fonts.
 
@@ -184,3 +189,4 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 * The trophy winner image was taken from [freepik](https://www.freepik.com/vectors/business).
 * The red cross loser image was taken from [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Red_X.svg/1024px-Red_X.svg.png).
 The image displaying the website on different screens in this document was created using [Am I Responsive](http://ami.responsivedesign.is/#).
+* Wireframes were created using [Balsamiq](https://balsamiq.com/).
