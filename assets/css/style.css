@@ -15,6 +15,7 @@
 /* assign image aspect ratio depending on dimensions provided in html */
 img {
     aspect-ratio: attr(width) / attr(height);
+    height: auto;
   }
 
 /* style .clear class to clear floats */
@@ -70,10 +71,6 @@ footer a {
     margin: 0 auto;
     border-radius: 10%;
     overflow: hidden;
-}
-
-#rules-area img, .image-container img {
-    height: auto;
 }
 
 #rules {
@@ -152,7 +149,6 @@ footer a {
 
 .image-container img {
     width: 100%;
-    height: auto;
     margin-bottom: -0.3rem;
 }
 

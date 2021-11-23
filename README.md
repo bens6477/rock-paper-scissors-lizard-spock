@@ -25,6 +25,8 @@ A countdown sequence triggers every time a selection is made, building anticipat
     * [Bugs](#bugs)
     * [Unfixed Bugs](#unfixed-bugs)
 1. [Deployment](#deployment)
+    * [GitHub Pages](#github-pages)
+    * [Cloning Repository](#cloning-repository)
 1. [Credits](#credits)
     * [Content](#content)
     * [Media](#media)
@@ -122,37 +124,44 @@ Various additional features would bring a greater user experience to the website
     * **Outcome** - Pressing the 1-5 keys on the keyboards correctly triggered the attacks from rock through to spock respectively. Pressing the 'R', 'I' and 'P' keys on the keboard executed the same code as the 'Reset Game', 'Instructions' and 'Play' buttons respectively, as explained above.
 
 * **Test** - All images on the website displayed correctly.
-    * **Outcome** - 
-    attacks
-    declaring winners
+    * **Outcome** - All user attacks were selected to check that the correct images were displayed in the user area upon revealing the result. This was also checked for the computer's selction by ensuring the returned image matched the output of <code>console.log(cpuSelection)</code>. Similarly, the images for the winner and loser of the game were checked using <code>console.log(vicor))</code> within the <code>declareWinner()</code> function. It was also verified that the main selection was re-displayed after 3 seconds of revealing the result for all attack options.
 
 * **Test** - Sweet Alerts
     * **Outcome** - 
 
-* **Test** - Error catching
-    * **Outcome** - 
+* **Test** - Testing errors were caught correctly.
+    * **Outcome** - After winner was delcared, all the selector buttons and 1-5 keys were pressed to check if the countdown sequence was triggered. For all cases the Sweet Alert function intervened to inform the user to reset the game to continue playing, ensuring that the user could not continuously play the game with no end.
 
-* **Test** - Moving Score
-    * **Outcome** - 
-
-* Checked all elements were responsive to screen size.
+* **Test** - Checking the score bar for the computer moved below the image on smaller screens.
+    * **Outcome** - <code>console.log('threshold crossed')</code> was used to check that the  <code>moveScore()</code> function was exceuting correctly. This messages displayed in the console every time the window size crossed the stacking threshold of 800px. The window was dragged to small and large widths several times, and the score bar moved appropriately to optimise the viewing of the content.
 
 ### Compatibility Testing
-* The website was tested for responsivity across screen sizes of 320px, 768px, 1280px and 1600px in width, coving typical screens for mobiles, tablets, laptops and desktops. Content readablility was optimised by altering the size and positioning of elements.
-* The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
-* [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
+* **Test** - Testing responsivity across various screen sizes.
+    * **Outcome** - The website was tested for responsivity across screen sizes of 320px, 768px, 1280px and 1600px in width, coving typical screens for mobiles, tablets, laptops and desktops. Three different laptop sizes and three different mobile phone sizes were used to verify this. Content readablility was optimised by altering the size and positioning of elements.
+
+* **Test** - Testing across multiple browsers.
+    * **Outcome** - The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen widths and across different browsers.
+
+* **Test** - Continuous verification across multiple viewports.
+    * **Outcome** - [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
 
 ### Performance Testing
-* The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
-* The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation.
-* Lighthouse was ran for both desktop and mobile sites with the results shown below. 
-* The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
-* Similarly, the performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
+* **Test** - Numerically testing the effectiveness of the website.
+    * **Outcome** - The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation. Lighthouse was ran for both desktop and mobile sites with the results shown below.
+    #### Desktop Homepage Lighthouse Results
+    ![Desktop Homepage Lightouse Results](assets/images/readme/lighthouse-desktop.PNG)
+    #### Mobile Homepage Lighthouse Results
+    ![Mobile Homepage Lighthouse Results](assets/images/readme/lighthouse-mobile.PNG)
 
-#### Desktop Homepage Lighthouse Results
-![Desktop Homepage Lightouse Results](assets/images/readme/lighthouse-desktop.PNG)
-#### Mobile Homepage Lighthouse Results
-![Mobile Homepage Lighthouse Results](assets/images/readme/lighthouse-mobile.PNG)
+* **Test** - Checking performance of images loading.
+    * **Outcome** - The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score due to longer contentful paint times on mobile devices as the image resolution was much larger than the maximum screen resolution.
+    * **Outcome 2** - Lighthouse returned a warning indicating that no explicit width or height was provided. To resolve this, the attributes of <code>width="500" height="500"</code> were added to the three image elements in the HTML script, and <code>img {aspect-ratio: attr(width) / attr(height); height: auto;}</code> was added in the CSS script. This assigned the aspect ratio depending on the image dimensions and set the height dependening on the width. This meant that the aspect ratio of the images were not overridden by the default settings of the browser and thus the image data could be manipulated faster at the start of the layout calculation through the provision this code. Image sizes could subsequently be overridden using typical CSS code. [Adapted from web.dev](https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=devtools#images-without-dimensions/).
+
+* **Test** - Testing performance of importing Sweet Alert scripts 
+    * **Outcome** - The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
+
+* **Test** - Testing performance of improting Google Fonts scripts 
+    * **Outcome** - The performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
 
 ### Validator Testing
 #### HTML
@@ -197,6 +206,7 @@ There are no known bugs left unfixed.
 
 
 ## Deployment
+### GitHub Pages
 The site was deployed to GitHub pages. The steps to deploy are as follows:
 1. In the GitHub repository, navigate to the repository for apprentice-brewing and then click on the Settings tab.
 1. Click on the Pages tab from the list of options on the left hand side of the page.
@@ -204,14 +214,24 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 1. Once saved the link to the page will be provided above the ‘Source’ sub-section upon refreshing.
 1. The live link can be found here - https://bens6477.github.io/rock-paper-scissors-lizard-spock/
 
+### Cloning Repository
+You can clone this repository to view, edit and run the code. The steps to clone the repository are as follows:
+
+* Within the repository, navigate to the 'Code' drop-down menu, select 'HTTP' and copy the URL.
+* Open Git Bash from your IDE of choice.
+* Navigate the current working directory to your desired location.
+* To clone the repository, type <code>git clone</code> into the terminal followed by the repository URL, in this case <code>git clone https://github.com/bens6477/rock-paper-scissors-lizard-spock</code>.
+* Press 'Enter'.
+
 
 ## Credits
 ### Content
-* Embedding selection buttons within the attack options in the image adapted from [Stack Overflow](https://stackoverflow.com/questions/24435397/).
-* Creating a countdown feature before revealing the result adapted from [Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/).
-* Dynamically hiding elements from view during gameplay adapted from [Career Karma](https://careerkarma.com/blog/css-hide-element/).
-* Functions running immediately when assigning event listeners adapted from [Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to).
-* Alerts disturbing the flow of events adapted from [Sweet Alert](https://sweetalert2.github.io/).
+* Providing explicit width and height dimension to images - adapted from [web.dev](https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=devtools#images-without-dimensions/)
+* Embedding selection buttons within the attack options in the image -  adapted from [Stack Overflow](https://stackoverflow.com/questions/24435397/).
+* Creating a countdown feature before revealing the result - adapted from [Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/).
+* Dynamically hiding elements from view during gameplay - adapted from [Career Karma](https://careerkarma.com/blog/css-hide-element/).
+* Functions running immediately when assigning event listeners - adapted from [Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to).
+* Alerts disturbing the flow of events - adapted from [Sweet Alert](https://sweetalert2.github.io/).
 * In-context code credits are provided in the [Bugs](#bugs) section.
 * All fonts were imported from [Google Fonts](https://fonts.google.com/specimen/Russo+One/).
 * The icons in the footer and game area were taken from [Font Awesome](https://fontawesome.com/v5.15/icons/).
