@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 rulesArea.classList.add('hide');
                 matchArea.classList.remove('hide');
                 break;
-            // Delete this upon submission ****************************************
             case "9":
                 userScore.innerHTML = '9';
                 cpuScore.innerHTML = '9';
@@ -93,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /**
- * Main game function.
+ * Executes main game function and catches errors in
+ * unaccepted user selections.
  */
 function runGame(userSelection) {
     if (buttonIncomplete) {
@@ -106,9 +106,9 @@ function runGame(userSelection) {
             });
         } else {
             buttonIncomplete = true;
-            resultsArea.classList.add('hide-center');
-            selectAttack.classList.add('hide-center');
-            countdownArea.classList.remove('hide-center');
+            resultsArea.classList.add('hide-visible');
+            selectAttack.classList.add('hide-visible');
+            countdownArea.classList.remove('hide-visible');
             titleIndex = 0;
             countdownArea.innerHTML = options[titleIndex];
             setTimeout(() => countdown(userSelection), 300);
@@ -117,7 +117,7 @@ function runGame(userSelection) {
 }
 
 /**
- * Moves location of CPU score bar when in vertically stacked orientation
+ * Moves location of CPU score bar when in vertically stacked orientation.
  */
 function stackScore() {
     if (verticalThreshold.matches) {
@@ -141,8 +141,8 @@ function countdown(userSelection) {
 	} else if (titleIndex === 5) {
         let cpuIndex = Math.floor(Math.random() * 5);
         let cpuSelection = options[cpuIndex];
-        resultsArea.classList.remove('hide-center');
-        countdownArea.classList.add('hide-center');
+        resultsArea.classList.remove('hide-visible');
+        countdownArea.classList.add('hide-visible');
         changeImage(userImage, userSelection);
         changeImage(cpuImage, cpuSelection);
         checkAnswer(userSelection, cpuSelection);
@@ -229,7 +229,7 @@ function imageReset() {
     setTimeout(function() {
         changeImage(userImage, 'selection');
         changeImage(cpuImage, 'selection');
-        selectAttack.classList.remove('hide-center');
+        selectAttack.classList.remove('hide-visible');
     }, 3000);
     buttonIncomplete = false;
 }

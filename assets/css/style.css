@@ -187,9 +187,7 @@ footer a {
     width: 30%;
     height: 30%;
     border-radius: 50%;
-    /* add opacity: 0; when submitting ******************************************************* */
-    background-color: rgba(255, 0, 0, 0.5);
-}
+    opacity: 0;}
 
 #user-image-container {
     position: relative;
@@ -221,8 +219,12 @@ footer a {
 }
 
 /* add class to hide elements upon request */
-.hide, .hide-center {
+.hide {
     display: none;
+}
+
+.hide-visible {
+    visibility: hidden;
 }
 
 /* add media queries for responsive design */
@@ -295,7 +297,7 @@ footer a {
         margin: 0 auto;
     }
 
-    .hide-center {
+    .hide-visible {
         display: initial;
         visibility: hidden;
     }
