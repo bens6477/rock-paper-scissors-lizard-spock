@@ -5,7 +5,7 @@ Challenge your luck against the computer in a contemporary variation of the trad
 <br>
 A countdown sequence triggers every time a selection is made, building anticipation before the winner of the point is revealed. The winner and loser are easily discerned through colour coding of the scores and the result message. Do you have what it takes to take on the computer?
 
-![Am I Responsive website]()
+![Am I Responsive website](assets/images/readme/am-i-responsive.PNG)
 
 ## Contents
 1. [Site Overview](#site-overview)
