@@ -12,6 +12,10 @@
     text-transform: uppercase;
 }
 
+img {
+    aspect-ratio: attr(width) / attr(height);
+  }
+
 /* style .clear class to clear floats */
 .clear {
     clear: both;
@@ -53,10 +57,7 @@ footer a {
     position: relative;
 }
 
-#rules-area {
-    width: 60%;
-}
-
+/* style rules area */
 #rules-area h2 {
     text-decoration: underline;
     margin-bottom: 0.5rem;
@@ -68,6 +69,10 @@ footer a {
     margin: 0 auto;
     border-radius: 10%;
     overflow: hidden;
+}
+
+#rules-area img, .image-container img {
+    height: auto;
 }
 
 #rules {
@@ -86,6 +91,7 @@ footer a {
     text-transform: initial;
 }
 
+/* style player areas */
 .player-area, .central-area {
     display: inline-block;
 }
@@ -113,6 +119,7 @@ footer a {
     font-size: 2rem;
 }
 
+/* style central area */
 .central-area {
     width: 20%;
 }
@@ -144,6 +151,7 @@ footer a {
 
 .image-container img {
     width: 100%;
+    height: auto;
     margin-bottom: -0.3rem;
 }
 
@@ -235,7 +243,11 @@ footer a {
 /* Threshold for vertical stacking */
 @media screen and (max-width: 800px) {
     .title-area {
-        margin: 1.5rem 0;
+        margin: 1.rem 0;
+    }
+
+    .title-area h1, #rules-area h2 {
+        font-size: 1.5rem;
     }
 
     footer {
@@ -243,7 +255,7 @@ footer a {
     }
 
     #rules-image-container {
-        width: 60%;
+        width: 50%;
     }
 
     .games-area, #rules-area {
@@ -297,7 +309,7 @@ footer a {
         margin: 0.5rem 0;
     }
 
-    .title-area h1 {
+    .title-area h1, #rules-area h2 {
         font-size: 0.9rem;
         padding: 0;
     }
