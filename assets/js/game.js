@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     matchArea.classList.add('hide');
                     break;
                 case  'github':
+                    window.open("https://github.com/bens6477", "_blank");
                     break;
                 default:
                     let userSelection = button.getAttribute("data-type");
