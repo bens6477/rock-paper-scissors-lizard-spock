@@ -12,6 +12,7 @@
     text-transform: uppercase;
 }
 
+/* assign image aspect ratio depending on dimensions provided in html */
 img {
     aspect-ratio: attr(width) / attr(height);
   }

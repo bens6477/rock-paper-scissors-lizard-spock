@@ -49,6 +49,7 @@ A countdown sequence triggers every time a selection is made, building anticipat
 ![Balsamiq Wireframes](assets/images/readme/wireframes.PNG)
 
 ### Styling
+* The website font was chosen to mimic the font in the main selection image and to provide strong, bold text for the users to read. The 'Russo One' font was chosen and imported from [Google Fonts](https://fonts.google.com/specimen/Russo+One/).
 * The site's main colours of black, white and navy blue and dark beige were chosen as a stonewashed pallet.
 * A colour grid was created to evaluate appropriate colour pairings using the [Eight Shapes Color Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%231b1d4e%0D%0A%2374522F%0D%0A%23A12B2B%0D%0A%23006100&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp). The left column shows that the all colours have an AAA contrast ratio of at least 7 over white backgrounds for excellent legibility.
 * The dark beige colour was used to accentuate titles and key information, and to break away from the main navy blue theme colour.
@@ -113,9 +114,27 @@ Various additional features would bring a greater user experience to the website
 
 ## Testing
 ### Functionality Testing
-* Checked all links and images on the website were work correctly.
-* Checked all icons in the user image triggered the appropriate attack.
-* Checked all keyboard commands operated correctly, triggering the user selection (1-5), viewing instructions (I) and reseting the game (R).
+
+* **Test** - All buttons were clicked to check they performed the desired outcome.
+    * **Outcome** - All 5 attack selector buttons sent the appropriate data-type attribute when clicked, triggering the correct event listener code. The 'Reset Game' button correctly executed the resetBoard() function, the 'Instructions' button overlayed the instructions content, and the 'Play' button resumed the game from the last recorded since (0-0 upon loading). The GitHub button previously contained an anchor tag linking to the GitHub page, though the user was only redirected when clicking on the text, and the button body triggered an unknown data-type issue in the event listener logic. Consequently, the anchor tag was removed and the user was redirected to the site via the JavaScript when clicking on any part of the button. 
+
+* **Test** - Checked all keyboard shortcut commands operated correctly, 
+    * **Outcome** - Pressing the 1-5 keys on the keyboards correctly triggered the attacks from rock through to spock respectively. Pressing the 'R', 'I' and 'P' keys on the keboard executed the same code as the 'Reset Game', 'Instructions' and 'Play' buttons respectively, as explained above.
+
+* **Test** - All images on the website displayed correctly.
+    * **Outcome** - 
+    attacks
+    declaring winners
+
+* **Test** - Sweet Alerts
+    * **Outcome** - 
+
+* **Test** - Error catching
+    * **Outcome** - 
+
+* **Test** - Moving Score
+    * **Outcome** - 
+
 * Checked all elements were responsive to screen size.
 
 ### Compatibility Testing

@@ -79,6 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
             case "r":
                 resetBoard();
                 break;
+            case "p":
+                rulesArea.classList.add('hide');
+                matchArea.classList.remove('hide');
+                break;
             // Delete this upon submission ****************************************
             case "9":
                 userScore.innerHTML = '9';
