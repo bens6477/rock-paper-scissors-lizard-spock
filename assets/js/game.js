@@ -1,3 +1,4 @@
+// Declare constants and variables
 let titleIndex = 0;
 let buttonIncomplete = false;
 
@@ -23,7 +24,6 @@ const userScore = document.getElementById('user-score');
 const cpuScore = document.getElementById('cpu-score');
 const userImage = document.getElementById('user-image');
 const cpuImage = document.getElementById('cpu-image');
-
 
 // Run game after DOM has finished loading, listening for button clicks.
 document.addEventListener("DOMContentLoaded", function() {
@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 /**
  * Main game function.
  */
@@ -125,7 +124,6 @@ function stackScore() {
     }
 }
 
-
 /**
  * Create function to run countdown procedure before changing
  * images and checking answer.
@@ -146,14 +144,12 @@ function countdown(userSelection) {
     }
 }
 
-
 /**
  * Changes the player's image depending on selection.
  */
 function changeImage(playerImage, selection) {
     playerImage.src = `assets/images/${selection}.webp`;
 }
-
 
 /**
  * Takes the selections of the user and cpu and determines the
@@ -179,7 +175,6 @@ function checkAnswer(userSelection, cpuSelection) {
         }
     }
 }
-
 
 /**
  * Receives the winner and increments the score accordingly.
@@ -222,7 +217,6 @@ function checkAnswer(userSelection, cpuSelection) {
     }
 }
 
-
 /**
  * Resets images to selection image after interval.
  */
@@ -234,7 +228,6 @@ function imageReset() {
     }, 3000);
     buttonIncomplete = false;
 }
-
 
 /**
  * Receives the victor and displays the final result
@@ -251,7 +244,6 @@ function declareWinner(victor) {
     }
     buttonIncomplete = false;
 }
-
 
 /**
  * Reset score to 0 after a player wins.

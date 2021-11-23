@@ -9,16 +9,18 @@ A countdown sequence triggers every time a selection is made, building anticipat
 
 ## Contents
 1. [Site Overview](#site-overview)
-1. [Planning Stage](#planning-stage)
+1. [Planning](#planning)
     * [Target Audience](#target-audience)
     * [User Stories](#user-stories)
-    * [Colour Scheme](#colour-scheme)
+    * [Styling](#styling)
 1. [Features](#features)
     * [Navigation](#navigation)
 1. [Future Enhancements](#future-enhancements)
 1. [Technology Used](#technology-used)
 1. [Testing](#testing)
-    * [Developer Tools](#developer-tools)
+    * [Functionality Testing](#functionality-testing)
+    * [Compatibility Testing](#compatibility-testing)
+    * [Performance Testing](#performance-testing)
     * [Validator Testing](#validator-testing)
     * [Bugs](#bugs)
     * [Unfixed Bugs](#unfixed-bugs)
@@ -27,7 +29,7 @@ A countdown sequence triggers every time a selection is made, building anticipat
     * [Content](#content)
     * [Media](#media)
 
-## Planning Stage
+## Planning
 ### Target Audience
 * Users who wish to engage in a more complex version of Rock, Paper, Scissors.
 * Users who are looking to design and code interactive games themselves.
@@ -43,32 +45,36 @@ A countdown sequence triggers every time a selection is made, building anticipat
 
 ### Wireframes
 * Wireframes were created to plan the visual layout of the site, organise the content into sections and plan the structure for both desktop and mobile browsers.  To optimise the usage of space, the content spanned horizontally on wide screens, and stacked vertically on thinner screens.
+
 ![Balsamiq Wireframes](assets/images/readme/wireframes.PNG)
 
-
-### Colour Scheme
+### Styling
 * The site's main colours of black, white and navy blue and dark beige were chosen as a stonewashed pallet.
 * A colour grid was created to evaluate appropriate colour pairings using the [Eight Shapes Color Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23ffffff%0D%0A%23000000%0D%0A%231b1d4e%0D%0A%2374522F%0D%0A%23A12B2B%0D%0A%23006100&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp). The left column shows that the all colours have an AAA contrast ratio of at least 7 over white backgrounds for excellent legibility.
 * The dark beige colour was used to accentuate titles and key information, and to break away from the main navy blue theme colour.
 * The shades of red and green were chosen with sufficient contrast on a white background, while providing enough intensity to quickly distinguish the winner and loser.
 * From this it was decided that all fonts would be kept black upon either white or golden background colours in order to provide sufficient contrast for the users. The inversion was also used to highlight active classes or upon hovering over elements.
+
 ![Eight Shapes Color Grid](assets/images/readme/color-contrast.PNG)
+
 
 ## Features
 ### Instruction Page
-![Instruction Page](assets/images/readme/instructions.PNG)
 Upon loading the page, the user is provided with intstructions of how to play the game, including the winner hierarchy figure and the different methods to select their attack. Users can return to this page throughout the game without losing their progress by clicking on the instruction button or "I" on their keyboard.
 
+![Instruction Page](assets/images/readme/instructions.PNG)
 
 ### Game Area
 The game area consists of two player areas - the user and the computer - containing their current score, and their current active image. Images vary dynamically between the attack selection figure, the player's chosen attack, and finally the winner/loser images after the game finishes.
 
 ### Responsive Layout
 For wider screens, the user and computer game areas are side by side to optimally fill the window area. For thinner screens, such as mobiles and tablets, the player areas are stacked vertivally, giving the user the sense of playing directly in front of their opponent. CSS media queries were utilised to optimise the styling across the different screen sizes.
+
 ![Horizontal vs. Vertical Stacking](assets/images/readme/layouts.png)
 
 ### Integrated Attack Selection
 The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
+
 ![Attack Selector Buttons](assets/images/readme/selector-buttons.PNG)
 
 ### Countdown Sequence
@@ -79,11 +85,14 @@ The last evaluated result is verbally transcribed in the central area, stating w
 
 ### Declaring the Winner
 Once either player reaches 10 point the winner is declared, returning a trophy image to the victor's game area and a red cross to the loserd's game area. All selector buttons are prevented from triggering from this point onwards, until the user selects to reset the game and play again. Should a selector be pressed, a Sweet Alert message will appear to reitterate this to the user.
+
 ![Declaring the Winner](assets/images/readme/declaring-winner.PNG)
 
 ### Error Catching
 Once the game has ended, the user can reset the game to play again. All selector buttons are disabled from triggering the game sequence, however should the user select another attack at this point, a Sweet Alert error message informs the user that they must reset the game to continue playing.
+
 ![Sweet Alert Error Catching](assets/images/readme/error-catching.PNG)
+
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
@@ -92,40 +101,39 @@ Various additional features would bring a greater user experience to the website
 
 
 ## Technology Used
-* HTML, CSS and JavaScript programming languages
+* HTML - Creating and adding content
+* CSS - Styling content
+* JavaScript - Manipulating content
 * [Google Fonts](https://fonts.google.com/specimen/Russo+One/) - 'Russo One' style 
-* [Font Awesome](https://fontawesome.com/v5.15/icons/github) - GitHub and up-arrow icons
+* [Font Awesome](https://fontawesome.com/v5.15/icons/) - GitHub and up-arrow icons
 * [GitPod](https://www.gitpod.io/) - IDE for local developement
 * [GIT](https://git-scm.com/) - Version Control
 * [GitHub](https://github.com/) - to host the repositories for this project and the live website preview
 
 
 ## Testing
-* **Functionality Testing**
-    * Checked all links and images on the website were work correctly.
-    * Checked all icons in the user image triggered the appropriate attack.
-    * Checked all keyboard commands operated correctly, triggering the user selection (1-5), viewing instructions (I) and reseting the game (R).
-    * Checked all elements were responsive to screen size.
+### Functionality Testing
+* Checked all links and images on the website were work correctly.
+* Checked all icons in the user image triggered the appropriate attack.
+* Checked all keyboard commands operated correctly, triggering the user selection (1-5), viewing instructions (I) and reseting the game (R).
+* Checked all elements were responsive to screen size.
 
-* **Compatibility Testing**
-    * The website was tested for responsivity across screen sizes of 320px, 768px, 1280px and 1600px in width, coving typical screens for mobiles, tablets, laptops and desktops. Content readablility was optimised by altering the size and positioning of elements.
-    * The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
-    * [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
+### Compatibility Testing
+* The website was tested for responsivity across screen sizes of 320px, 768px, 1280px and 1600px in width, coving typical screens for mobiles, tablets, laptops and desktops. Content readablility was optimised by altering the size and positioning of elements.
+* The Developer Tools function was used to test this across Google Chrome, Mozilla Firefox and Microsoft Edge to verify the site was fully responsive across the specificed screen witdhs and across different browsers.
+* [Am I Responsive](http://ami.responsivedesign.is/#) was frequently used to check the responsiveness of the website accros different screen dimensions, ensuring that all content was dislpayed an the optimal manner.
 
-* **Performance Testing**
-    * The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
-    * The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation.
-    * Lighthouse was ran for both desktop and mobile sites with the results shown below. 
-    * The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
-    * Similarly, the performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
-
+### Performance Testing
+* The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
+* The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation.
+* Lighthouse was ran for both desktop and mobile sites with the results shown below. 
+* The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
+* Similarly, the performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
 
 #### Desktop Homepage Lighthouse Results
-![Desktop Homepage Lightouse Results]()
-
+![Desktop Homepage Lightouse Results](assets/images/readme/lighthouse-desktop.PNG)
 #### Mobile Homepage Lighthouse Results
-![Mobile Homepage Lighthouse Results]()
-
+![Mobile Homepage Lighthouse Results](assets/images/readme/lighthouse-mobile.PNG)
 
 ### Validator Testing
 #### HTML
@@ -137,7 +145,6 @@ Various additional features would bring a greater user experience to the website
 #### Accessibility
 * The website was tested using the Lighthouse function in Chrome DevTools, showing a accessibility level of 100%.
     
-
 ### Bugs
 * **Issue** - Generating the winner outcome.
     * **Resolution** - A standardised outcome array was set up for each selection option with the syntax <code>selectionArray = [win, win, lose, lose, draw]</code>, representing the user's outcome relative to the computer's selection. For example <code>rockArray = ['scissors', 'lizard', 'paper', 'spock', 'rock']</code>, where rock beats scissors, loses to paper and so forth. Subsequently, each selection array was nested within the larger <code>cases</code> array, creating one variable from which all combinations could be accessed. This meant that <code>cases[i][j]</code> could be used to create the outcome logic for any combination, where i represented the user's selection, j represented the computer's selection, and the j index determined the user's outcome (win, lose, draw). No tutorials were used when writing the code to detemine the winner.
@@ -178,11 +185,17 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 1. Once saved the link to the page will be provided above the ‘Source’ sub-section upon refreshing.
 1. The live link can be found here - https://bens6477.github.io/rock-paper-scissors-lizard-spock/
 
+
 ## Credits
 ### Content
-* Additional code credits are provided in the [Bugs](#bugs) section.
-* The icons in the footer and game area were taken from Font Awesome.
-* All fonts were imported from Google Fonts.
+* Embedding selection buttons within the attack options in the image adapted from [Stack Overflow](https://stackoverflow.com/questions/24435397/).
+* Creating a countdown feature before revealing the result adapted from [Carl Anderson](https://carlanderson.xyz/creating-timed-sequences-in-javascript-using-settimeout/).
+* Dynamically hiding elements from view during gameplay adapted from [Career Karma](https://careerkarma.com/blog/css-hide-element/).
+* Functions running immediately when assigning event listeners adapted from [Stack Overflow](https://stackoverflow.com/questions/16310423/addeventlistener-calls-the-function-without-me-even-asking-it-to).
+* Alerts disturbing the flow of events adapted from [Sweet Alert](https://sweetalert2.github.io/).
+* In-context code credits are provided in the [Bugs](#bugs) section.
+* All fonts were imported from [Google Fonts](https://fonts.google.com/specimen/Russo+One/).
+* The icons in the footer and game area were taken from [Font Awesome](https://fontawesome.com/v5.15/icons/).
 
 ### Media
 * The main figure with attacks was taken from the images in this eBay [T-Shirt](https://www.ebay.co.uk/itm/273532646173). Each individual attack image was cropped from the parent image above.

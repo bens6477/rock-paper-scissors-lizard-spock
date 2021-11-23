@@ -1,7 +1,7 @@
 /* import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-/* add base stylling */
+/* add base styling */
 * {
     margin: 0;
     padding: 0;
@@ -220,7 +220,7 @@ footer a {
     display: none;
 }
 
-/* add media queries for responsive deisgn */
+/* add media queries for responsive design */
 @media screen and (max-width: 950px) {
     .title-area h1 {
         font-size: 2rem;
