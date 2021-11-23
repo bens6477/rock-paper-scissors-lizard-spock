@@ -222,6 +222,7 @@ function checkAnswer(userSelection, cpuSelection) {
     }
 }
 
+
 /**
  * Resets images to selection image after interval.
  */
@@ -239,7 +240,6 @@ function imageReset() {
  * Receives the victor and displays the final result
  */
 function declareWinner(victor) {
-    victor = 'user';
     if (victor === 'user') {
         changeImage(userImage, 'winner');
         changeImage(cpuImage, 'loser');

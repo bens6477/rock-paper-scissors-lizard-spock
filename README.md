@@ -1,8 +1,7 @@
 # Rock, Paper, Scissors, Lizard, Spock
 
 ## Site Overview
-Challenge your luck against the computer in a contemporary variation of the traditional game of chance. This interactive front-end game introduces two additional variables - Lizard and Spock - adding complextiy to both the rules and gameplay.
-However, the extra combinations of the game are displayed intuitively, as players select their attack directly from the winner hierarchy figure, removing the need to be fluent in the combination outcomes.
+Challenge your luck against the computer in a contemporary variation of the traditional game of chance. This interactive front-end game introduces two additional variables - Lizard and Spock - adding complextiy to both the rules and gameplay. However, the extra combinations of the game are displayed intuitively, as players select their attack directly from the winner hierarchy figure, removing the need to be fluent in the combination outcomes.
 <br>
 A countdown sequence triggers every time a selection is made, building anticipation before the winner of the point is revealed. The winner and loser are easily discerned through colour coding of the scores and the result message. Do you have what it takes to take on the computer?
 
@@ -57,37 +56,34 @@ A countdown sequence triggers every time a selection is made, building anticipat
 
 ## Features
 ### Instruction Page
-![Instruction Page]()
-
+![Instruction Page](assets/images/readme/instructions.PNG)
+Upon loading the page, the user is provided with intstructions of how to play the game, including the winner hierarchy figure and the different methods to select their attack. Users can return to this page throughout the game without losing their progress by clicking on the instruction button or "I" on their keyboard.
 
 
 ### Game Area
 The game area consists of two player areas - the user and the computer - containing their current score, and their current active image. Images vary dynamically between the attack selection figure, the player's chosen attack, and finally the winner/loser images after the game finishes.
-![Game Area]()
-
-
-### Integrated Attack Selection
-The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
-![Attack Selector Buttons]()
-
-### Countdown Sequence
-After the user selects and attack, a countdown sequence is triggered. The words "Rock", "Paper", "Scissors", "Lizard", "Spock" flash in the center of the screen before returning the outcome of the point. This creates anticipation over the result after the user locks in their selection. All selector buttons are disabled for the duration of the countdown to prevent the result from being overridden or from sending unaccepted inputs through the code.
-![Countdown Sequence]()
 
 ### Responsive Layout
 For wider screens, the user and computer game areas are side by side to optimally fill the window area. For thinner screens, such as mobiles and tablets, the player areas are stacked vertivally, giving the user the sense of playing directly in front of their opponent. CSS media queries were utilised to optimise the styling across the different screen sizes.
-![Horizontal vs. Vertical Stacking]()
+![Horizontal vs. Vertical Stacking](assets/images/readme/layouts.png)
+
+### Integrated Attack Selection
+The user selects their attack by clicking directly on the relevant icon in the image. Circular buttons are embedded over the each attack option so the user can intuitively relate their selection to the other possible attacks.
+![Attack Selector Buttons](assets/images/readme/selector-buttons.PNG)
+
+### Countdown Sequence
+After the user selects and attack, a countdown sequence is triggered. The words "Rock", "Paper", "Scissors", "Lizard", "Spock" flash in the center of the screen before returning the outcome of the point. This creates anticipation over the result after the user locks in their selection. All selector buttons are disabled for the duration of the countdown to prevent the result from being overridden or from sending unaccepted inputs through the code.
 
 ### Outcome Feedback 
 The last evaluated result is verbally transcribed in the central area, stating whether the user won/lost/drew and provinding an explanation of the combintation behind the scoring. The winner and loser's scores are displayed in green and red respectively to provide and instant visual indicator of the victor. Additionally result text is responsively coloured in accordance to the user's outcome.
-![Winner/Loser Colouring]()
 
 ### Declaring the Winner
 Once either player reaches 10 point the winner is declared, returning a trophy image to the victor's game area and a red cross to the loserd's game area. All selector buttons are prevented from triggering from this point onwards, until the user selects to reset the game and play again. Should a selector be pressed, a Sweet Alert message will appear to reitterate this to the user.
-![Declaring the Winner]()
+![Declaring the Winner](assets/images/readme/declaring-winner.PNG)
 
 ### Error Catching
-![Sweet Alert Error Catching]()
+Once the game has ended, the user can reset the game to play again. All selector buttons are disabled from triggering the game sequence, however should the user select another attack at this point, a Sweet Alert error message informs the user that they must reset the game to continue playing.
+![Sweet Alert Error Catching](assets/images/readme/error-catching.PNG)
 
 ## Future Enhancements
 Various additional features would bring a greater user experience to the website: 
@@ -120,7 +116,6 @@ Various additional features would bring a greater user experience to the website
     * The website was designed using a desktop-first approach, therefore the image resolutions were optimised to look better on larger screens. This resulted in a lower performance score on mobile devices as the image resolution was much larger than the maximum screen resolution.
     * The Lighthouse function in Google Chrome's Developer Tools was used frequently to numerically measure the parameters such as the performance, accessibility, best practices and search engine optimisation.
     * Lighthouse was ran for both desktop and mobile sites with the results shown below. 
-*** Error Check Thiss!!!!
     * The performance of the website was significantly improved by importing the sweetalert2 JavaScript file script from the web URL <code>https://unpkg.com/sweetalert/dist/sweetalert.min.js</code> rather than from the JSDelivr CDN <code>//cdn.jsdelivr.net/npm/sweetalert2@11</code>. This halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
     * Similarly, the performance of the website was significantly improved by importing the 'Russo One' Google Font from within the CSS script rather than from the in the head of the html script. This again halved the largest contenful paint time, which particularly improved the loading time on mobile devices.
 

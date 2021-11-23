@@ -21,7 +21,7 @@
 
 /* stlye title area */
 .title-area {
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0 1rem 0;
     color: #74522F;
 }
 
@@ -64,7 +64,7 @@ footer a {
 }
 
 #rules-image-container {
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
     border-radius: 10%;
     overflow: hidden;
@@ -191,28 +191,28 @@ footer a {
 }
 
 #rock-button {
-    top: 21%;
+    top: 21.5%;
     left: 50.5%;
 }
 
 #paper-button {
-    top: 43%;
+    top: 43.5%;
     left: 80%;
 }
 
 #scissors-button {
-    top: 77%;
+    top: 78%;
     left: 69%;
 }
 
 #lizard-button {
-    top: 77%;
+    top: 78%;
     left: 32%;
 }
 
 #spock-button {
-    top: 43%;
-    left: 20%;
+    top: 43.7%;
+    left: 20.5%;
 }
 
 /* add class to hide elements upon request */
