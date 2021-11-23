@@ -116,7 +116,6 @@ Various additional features would bring a greater user experience to the website
 
 ## Testing
 ### Functionality Testing
-
 * **Test** - All buttons were clicked to check they performed the desired outcome.
     * **Outcome** - All 5 attack selector buttons sent the appropriate data-type attribute when clicked, triggering the correct event listener code. The 'Reset Game' button correctly executed the resetBoard() function, the 'Instructions' button overlayed the instructions content, and the 'Play' button resumed the game from the last recorded since (0-0 upon loading). The GitHub button previously contained an anchor tag linking to the GitHub page, though the user was only redirected when clicking on the text, and the button body triggered an unknown data-type issue in the event listener logic. Consequently, the anchor tag was removed and the user was redirected to the site via the JavaScript when clicking on any part of the button. 
 
@@ -125,9 +124,6 @@ Various additional features would bring a greater user experience to the website
 
 * **Test** - All images on the website displayed correctly.
     * **Outcome** - All user attacks were selected to check that the correct images were displayed in the user area upon revealing the result. This was also checked for the computer's selction by ensuring the returned image matched the output of <code>console.log(cpuSelection)</code>. Similarly, the images for the winner and loser of the game were checked using <code>console.log(vicor))</code> within the <code>declareWinner()</code> function. It was also verified that the main selection was re-displayed after 3 seconds of revealing the result for all attack options.
-
-* **Test** - Sweet Alerts
-    * **Outcome** - 
 
 * **Test** - Testing errors were caught correctly.
     * **Outcome** - After winner was delcared, all the selector buttons and 1-5 keys were pressed to check if the countdown sequence was triggered. For all cases the Sweet Alert function intervened to inform the user to reset the game to continue playing, ensuring that the user could not continuously play the game with no end.

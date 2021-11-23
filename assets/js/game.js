@@ -83,10 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 rulesArea.classList.add('hide');
                 matchArea.classList.remove('hide');
                 break;
-            case "9":
-                userScore.innerHTML = '9';
-                cpuScore.innerHTML = '9';
-                break;
         }
     });
 });
