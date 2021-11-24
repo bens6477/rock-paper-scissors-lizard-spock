@@ -24,7 +24,6 @@ img {
     line-height: 0;
 }
 
-
 /* stlye title area */
 .title-area {
     margin: 1rem 0 1rem 0;
@@ -60,7 +59,7 @@ footer a {
 }
 
 #match-area {
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 
 /* style rules area */
