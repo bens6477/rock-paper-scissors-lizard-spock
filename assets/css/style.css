@@ -14,7 +14,6 @@
 
 /* assign image aspect ratio depending on dimensions provided in html */
 img {
-    aspect-ratio: attr(width) / attr(height);
     height: auto;
   }
 
@@ -245,7 +244,7 @@ footer a {
 /* Threshold for vertical stacking */
 @media screen and (max-width: 800px) {
     .title-area {
-        margin: 1.rem 0;
+        margin: 1rem 0;
     }
 
     .title-area h1, #rules-area h2 {
