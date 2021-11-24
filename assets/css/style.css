@@ -23,7 +23,7 @@ img {
     line-height: 0;
 }
 
-/* stlye title area */
+/* style title area */
 .title-area {
     margin: 1rem 0 1rem 0;
     color: #74522F;
@@ -241,7 +241,7 @@ footer a {
     }
 }
 
-/* Threshold for vertical stacking */
+/* threshold for vertical stacking */
 @media screen and (max-width: 800px) {
     .title-area {
         margin: 1rem 0;
