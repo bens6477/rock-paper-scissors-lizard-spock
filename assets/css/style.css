@@ -59,6 +59,10 @@ footer a {
     position: relative;
 }
 
+#match-area {
+    margin-top: 2rem;
+}
+
 /* style rules area */
 #rules-area h2 {
     text-decoration: underline;
@@ -259,6 +263,10 @@ footer a {
 
     .games-area, #rules-area {
         width: 95%;
+    }
+
+    #match-area {
+        margin-top: 0;
     }
 
     .central-area {
